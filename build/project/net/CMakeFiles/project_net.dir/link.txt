@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libproject_net.a CMakeFiles/project_net.dir/Server.cc.o CMakeFiles/project_net.dir/Client.cc.o CMakeFiles/project_net.dir/Context.cc.o
+/usr/bin/ranlib ../../lib/libproject_net.a

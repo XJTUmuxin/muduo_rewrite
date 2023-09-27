@@ -1,0 +1,11 @@
+set(file_SRCS
+  FileNode.cc
+)
+add_library(project_file ${file_SRCS})
+
+target_link_libraries(project_file nlohmann_json::nlohmann_json muduo_base)
+
+install(TARGETS project_file DESTINATION lib)
+
+file(GLOB HEADERS "*.h")
+install(FILES ${HEADERS} DESTINATION include/project/file)

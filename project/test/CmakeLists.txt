@@ -1,0 +1,17 @@
+add_executable(client_test client_test.cc)
+target_link_libraries(client_test project_net muduo_net)
+
+add_executable(server_test server_test.cc)
+target_link_libraries(server_test project_net muduo_net)
+
+add_executable(FileNode_test FileNode_test.cc)
+target_link_libraries(FileNode_test project_file)
+
+add_executable(serial_test serial_test.cc)
+target_link_libraries(serial_test project_file)
+
+add_executable(filesystem filesystem.cc)
+
+add_executable(base64_test base64_test.cc)
+target_link_libraries(base64_test project_net)
+

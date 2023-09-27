@@ -1,0 +1,217 @@
+[
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/base/CMakeFiles/muduo_base.dir/AsyncLogging.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/AsyncLogging.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/base/AsyncLogging.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/base/CMakeFiles/muduo_base.dir/Condition.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/Condition.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/base/Condition.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/base/CMakeFiles/muduo_base.dir/CountDownLatch.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/CountDownLatch.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/base/CountDownLatch.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/base/CMakeFiles/muduo_base.dir/CurrentThread.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/CurrentThread.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/base/CurrentThread.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/base/CMakeFiles/muduo_base.dir/Date.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/Date.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/base/Date.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/base/CMakeFiles/muduo_base.dir/Exception.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/Exception.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/base/Exception.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/base/CMakeFiles/muduo_base.dir/FileUtil.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/FileUtil.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/base/FileUtil.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/base/CMakeFiles/muduo_base.dir/LogFile.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/LogFile.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/base/LogFile.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/base/CMakeFiles/muduo_base.dir/Logging.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/Logging.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/base/Logging.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/base/CMakeFiles/muduo_base.dir/LogStream.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/LogStream.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/base/LogStream.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/base/CMakeFiles/muduo_base.dir/ProcessInfo.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/ProcessInfo.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/base/ProcessInfo.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/base/CMakeFiles/muduo_base.dir/Timestamp.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/Timestamp.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/base/Timestamp.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/base/CMakeFiles/muduo_base.dir/Thread.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/Thread.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/base/Thread.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/base/CMakeFiles/muduo_base.dir/ThreadPool.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/ThreadPool.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/base/ThreadPool.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/base/CMakeFiles/muduo_base.dir/TimeZone.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/TimeZone.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/base/TimeZone.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/net/CMakeFiles/muduo_net.dir/Acceptor.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/net/Acceptor.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/net/Acceptor.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/net/CMakeFiles/muduo_net.dir/Buffer.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/net/Buffer.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/net/Buffer.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/net/CMakeFiles/muduo_net.dir/Channel.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/net/Channel.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/net/Channel.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/net/CMakeFiles/muduo_net.dir/Connector.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/net/Connector.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/net/Connector.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/net/CMakeFiles/muduo_net.dir/EventLoop.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/net/EventLoop.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/net/EventLoop.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/net/CMakeFiles/muduo_net.dir/EventLoopThread.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/net/EventLoopThread.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/net/EventLoopThread.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/net/CMakeFiles/muduo_net.dir/EventLoopThreadPool.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/net/EventLoopThreadPool.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/net/EventLoopThreadPool.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/net/CMakeFiles/muduo_net.dir/InetAddress.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/net/InetAddress.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/net/InetAddress.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/net/CMakeFiles/muduo_net.dir/Poller.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/net/Poller.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/net/Poller.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/net/CMakeFiles/muduo_net.dir/poller/DefaultPoller.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/net/poller/DefaultPoller.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/net/poller/DefaultPoller.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/net/CMakeFiles/muduo_net.dir/poller/EPollPoller.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/net/poller/EPollPoller.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/net/poller/EPollPoller.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/net/CMakeFiles/muduo_net.dir/Socket.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/net/Socket.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/net/Socket.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/net/CMakeFiles/muduo_net.dir/SocketsOps.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/net/SocketsOps.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/net/SocketsOps.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/net/CMakeFiles/muduo_net.dir/TcpClient.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/net/TcpClient.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/net/TcpClient.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/net/CMakeFiles/muduo_net.dir/TcpConnection.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/net/TcpConnection.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/net/TcpConnection.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/net/CMakeFiles/muduo_net.dir/TcpServer.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/net/TcpServer.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/net/TcpServer.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/net/CMakeFiles/muduo_net.dir/Timer.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/net/Timer.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/net/Timer.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o muduo/net/CMakeFiles/muduo_net.dir/TimerQueue.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/net/TimerQueue.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/muduo/net/TimerQueue.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o project/test/CMakeFiles/client_test.dir/client_test.cc.o -c /home/muxin/hdd/muduo_rewrite/project/test/client_test.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/project/test/client_test.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o project/test/CMakeFiles/server_test.dir/server_test.cc.o -c /home/muxin/hdd/muduo_rewrite/project/test/server_test.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/project/test/server_test.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o project/test/CMakeFiles/FileNode_test.dir/FileNode_test.cc.o -c /home/muxin/hdd/muduo_rewrite/project/test/FileNode_test.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/project/test/FileNode_test.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o project/test/CMakeFiles/serial_test.dir/serial_test.cc.o -c /home/muxin/hdd/muduo_rewrite/project/test/serial_test.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/project/test/serial_test.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o project/test/CMakeFiles/filesystem.dir/filesystem.cc.o -c /home/muxin/hdd/muduo_rewrite/project/test/filesystem.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/project/test/filesystem.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o project/test/CMakeFiles/base64_test.dir/base64_test.cc.o -c /home/muxin/hdd/muduo_rewrite/project/test/base64_test.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/project/test/base64_test.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o project/file/CMakeFiles/project_file.dir/FileNode.cc.o -c /home/muxin/hdd/muduo_rewrite/project/file/FileNode.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/project/file/FileNode.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o project/net/CMakeFiles/project_net.dir/Server.cc.o -c /home/muxin/hdd/muduo_rewrite/project/net/Server.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/project/net/Server.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o project/net/CMakeFiles/project_net.dir/Client.cc.o -c /home/muxin/hdd/muduo_rewrite/project/net/Client.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/project/net/Client.cc"
+},
+{
+  "directory": "/home/muxin/hdd/muduo_rewrite/build",
+  "command": "/usr/bin/g++ -I/home/muxin/anaconda3/include -I/home/muxin/hdd/muduo_rewrite -g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++20 -rdynamic -O2 -DNDEBUG -o project/net/CMakeFiles/project_net.dir/Context.cc.o -c /home/muxin/hdd/muduo_rewrite/project/net/Context.cc",
+  "file": "/home/muxin/hdd/muduo_rewrite/project/net/Context.cc"
+}
+]

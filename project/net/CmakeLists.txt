@@ -1,0 +1,13 @@
+set(file_SRCS
+  Server.cc
+  Client.cc
+  Context.cc
+)
+add_library(project_net ${file_SRCS})
+
+target_link_libraries(project_net project_file muduo_base muduo_net nlohmann_json::nlohmann_json)
+
+install(TARGETS project_net DESTINATION lib)
+
+file(GLOB HEADERS "*.h")
+install(FILES ${HEADERS} DESTINATION include/project/net)

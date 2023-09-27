@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libproject_file.a CMakeFiles/project_file.dir/FileNode.cc.o
+/usr/bin/ranlib ../../lib/libproject_file.a
