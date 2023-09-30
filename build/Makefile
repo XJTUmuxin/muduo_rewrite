@@ -263,6 +263,19 @@ filesystem/fast:
 .PHONY : filesystem/fast
 
 #=============================================================================
+# Target rules for targets named inotify_test
+
+# Build rule for target.
+inotify_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 inotify_test
+.PHONY : inotify_test
+
+# fast build rule for target.
+inotify_test/fast:
+	$(MAKE) $(MAKESILENT) -f project/test/CMakeFiles/inotify_test.dir/build.make project/test/CMakeFiles/inotify_test.dir/build
+.PHONY : inotify_test/fast
+
+#=============================================================================
 # Target rules for targets named base64_test
 
 # Build rule for target.
@@ -318,6 +331,7 @@ help:
 	@echo "... base64_test"
 	@echo "... client_test"
 	@echo "... filesystem"
+	@echo "... inotify_test"
 	@echo "... muduo_base"
 	@echo "... muduo_net"
 	@echo "... project_file"

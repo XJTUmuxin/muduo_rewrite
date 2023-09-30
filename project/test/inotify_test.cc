@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <cassert>
 #include <sys/inotify.h>  // 引入 inotify 的头文件
 /*
  * 用于打印发生的事件

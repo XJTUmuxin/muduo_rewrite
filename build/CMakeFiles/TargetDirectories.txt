@@ -54,6 +54,7 @@
 /home/muxin/hdd/muduo_rewrite/build/project/test/CMakeFiles/FileNode_test.dir
 /home/muxin/hdd/muduo_rewrite/build/project/test/CMakeFiles/serial_test.dir
 /home/muxin/hdd/muduo_rewrite/build/project/test/CMakeFiles/filesystem.dir
+/home/muxin/hdd/muduo_rewrite/build/project/test/CMakeFiles/inotify_test.dir
 /home/muxin/hdd/muduo_rewrite/build/project/test/CMakeFiles/base64_test.dir
 /home/muxin/hdd/muduo_rewrite/build/project/test/CMakeFiles/test.dir
 /home/muxin/hdd/muduo_rewrite/build/project/test/CMakeFiles/edit_cache.dir

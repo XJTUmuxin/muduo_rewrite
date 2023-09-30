@@ -242,6 +242,20 @@ filesystem/fast:
 .PHONY : filesystem/fast
 
 # Convenience name for target.
+project/test/CMakeFiles/inotify_test.dir/rule:
+	cd /home/muxin/hdd/muduo_rewrite/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project/test/CMakeFiles/inotify_test.dir/rule
+.PHONY : project/test/CMakeFiles/inotify_test.dir/rule
+
+# Convenience name for target.
+inotify_test: project/test/CMakeFiles/inotify_test.dir/rule
+.PHONY : inotify_test
+
+# fast build rule for target.
+inotify_test/fast:
+	cd /home/muxin/hdd/muduo_rewrite/build && $(MAKE) $(MAKESILENT) -f project/test/CMakeFiles/inotify_test.dir/build.make project/test/CMakeFiles/inotify_test.dir/build
+.PHONY : inotify_test/fast
+
+# Convenience name for target.
 project/test/CMakeFiles/base64_test.dir/rule:
 	cd /home/muxin/hdd/muduo_rewrite/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project/test/CMakeFiles/base64_test.dir/rule
 .PHONY : project/test/CMakeFiles/base64_test.dir/rule
@@ -351,6 +365,30 @@ filesystem.cc.s:
 	cd /home/muxin/hdd/muduo_rewrite/build && $(MAKE) $(MAKESILENT) -f project/test/CMakeFiles/filesystem.dir/build.make project/test/CMakeFiles/filesystem.dir/filesystem.cc.s
 .PHONY : filesystem.cc.s
 
+inotify_test.o: inotify_test.cc.o
+.PHONY : inotify_test.o
+
+# target to build an object file
+inotify_test.cc.o:
+	cd /home/muxin/hdd/muduo_rewrite/build && $(MAKE) $(MAKESILENT) -f project/test/CMakeFiles/inotify_test.dir/build.make project/test/CMakeFiles/inotify_test.dir/inotify_test.cc.o
+.PHONY : inotify_test.cc.o
+
+inotify_test.i: inotify_test.cc.i
+.PHONY : inotify_test.i
+
+# target to preprocess a source file
+inotify_test.cc.i:
+	cd /home/muxin/hdd/muduo_rewrite/build && $(MAKE) $(MAKESILENT) -f project/test/CMakeFiles/inotify_test.dir/build.make project/test/CMakeFiles/inotify_test.dir/inotify_test.cc.i
+.PHONY : inotify_test.cc.i
+
+inotify_test.s: inotify_test.cc.s
+.PHONY : inotify_test.s
+
+# target to generate assembly for a file
+inotify_test.cc.s:
+	cd /home/muxin/hdd/muduo_rewrite/build && $(MAKE) $(MAKESILENT) -f project/test/CMakeFiles/inotify_test.dir/build.make project/test/CMakeFiles/inotify_test.dir/inotify_test.cc.s
+.PHONY : inotify_test.cc.s
+
 serial_test.o: serial_test.cc.o
 .PHONY : serial_test.o
 
@@ -416,6 +454,7 @@ help:
 	@echo "... base64_test"
 	@echo "... client_test"
 	@echo "... filesystem"
+	@echo "... inotify_test"
 	@echo "... serial_test"
 	@echo "... server_test"
 	@echo "... FileNode_test.o"
@@ -430,6 +469,9 @@ help:
 	@echo "... filesystem.o"
 	@echo "... filesystem.i"
 	@echo "... filesystem.s"
+	@echo "... inotify_test.o"
+	@echo "... inotify_test.i"
+	@echo "... inotify_test.s"
 	@echo "... serial_test.o"
 	@echo "... serial_test.i"
 	@echo "... serial_test.s"

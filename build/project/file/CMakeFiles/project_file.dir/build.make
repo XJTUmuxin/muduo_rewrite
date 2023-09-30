@@ -73,15 +73,15 @@ project/file/CMakeFiles/project_file.dir/FileNode.cc.o: project/file/CMakeFiles/
 project/file/CMakeFiles/project_file.dir/FileNode.cc.o: ../project/file/FileNode.cc
 project/file/CMakeFiles/project_file.dir/FileNode.cc.o: project/file/CMakeFiles/project_file.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object project/file/CMakeFiles/project_file.dir/FileNode.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/project/file && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT project/file/CMakeFiles/project_file.dir/FileNode.cc.o -MF CMakeFiles/project_file.dir/FileNode.cc.o.d -o CMakeFiles/project_file.dir/FileNode.cc.o -c /home/muxin/hdd/muduo_rewrite/project/file/FileNode.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/project/file && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT project/file/CMakeFiles/project_file.dir/FileNode.cc.o -MF CMakeFiles/project_file.dir/FileNode.cc.o.d -o CMakeFiles/project_file.dir/FileNode.cc.o -c /home/muxin/hdd/muduo_rewrite/project/file/FileNode.cc
 
 project/file/CMakeFiles/project_file.dir/FileNode.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project_file.dir/FileNode.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/project/file && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/project/file/FileNode.cc > CMakeFiles/project_file.dir/FileNode.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/project/file && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/project/file/FileNode.cc > CMakeFiles/project_file.dir/FileNode.cc.i
 
 project/file/CMakeFiles/project_file.dir/FileNode.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project_file.dir/FileNode.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/project/file && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/project/file/FileNode.cc -o CMakeFiles/project_file.dir/FileNode.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/project/file && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/project/file/FileNode.cc -o CMakeFiles/project_file.dir/FileNode.cc.s
 
 # Object files for target project_file
 project_file_OBJECTS = \

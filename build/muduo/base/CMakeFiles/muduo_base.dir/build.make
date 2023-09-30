@@ -73,211 +73,211 @@ muduo/base/CMakeFiles/muduo_base.dir/AsyncLogging.cc.o: muduo/base/CMakeFiles/mu
 muduo/base/CMakeFiles/muduo_base.dir/AsyncLogging.cc.o: ../muduo/base/AsyncLogging.cc
 muduo/base/CMakeFiles/muduo_base.dir/AsyncLogging.cc.o: muduo/base/CMakeFiles/muduo_base.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object muduo/base/CMakeFiles/muduo_base.dir/AsyncLogging.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/AsyncLogging.cc.o -MF CMakeFiles/muduo_base.dir/AsyncLogging.cc.o.d -o CMakeFiles/muduo_base.dir/AsyncLogging.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/AsyncLogging.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/AsyncLogging.cc.o -MF CMakeFiles/muduo_base.dir/AsyncLogging.cc.o.d -o CMakeFiles/muduo_base.dir/AsyncLogging.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/AsyncLogging.cc
 
 muduo/base/CMakeFiles/muduo_base.dir/AsyncLogging.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo_base.dir/AsyncLogging.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/AsyncLogging.cc > CMakeFiles/muduo_base.dir/AsyncLogging.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/AsyncLogging.cc > CMakeFiles/muduo_base.dir/AsyncLogging.cc.i
 
 muduo/base/CMakeFiles/muduo_base.dir/AsyncLogging.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo_base.dir/AsyncLogging.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/AsyncLogging.cc -o CMakeFiles/muduo_base.dir/AsyncLogging.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/AsyncLogging.cc -o CMakeFiles/muduo_base.dir/AsyncLogging.cc.s
 
 muduo/base/CMakeFiles/muduo_base.dir/Condition.cc.o: muduo/base/CMakeFiles/muduo_base.dir/flags.make
 muduo/base/CMakeFiles/muduo_base.dir/Condition.cc.o: ../muduo/base/Condition.cc
 muduo/base/CMakeFiles/muduo_base.dir/Condition.cc.o: muduo/base/CMakeFiles/muduo_base.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object muduo/base/CMakeFiles/muduo_base.dir/Condition.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/Condition.cc.o -MF CMakeFiles/muduo_base.dir/Condition.cc.o.d -o CMakeFiles/muduo_base.dir/Condition.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/Condition.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/Condition.cc.o -MF CMakeFiles/muduo_base.dir/Condition.cc.o.d -o CMakeFiles/muduo_base.dir/Condition.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/Condition.cc
 
 muduo/base/CMakeFiles/muduo_base.dir/Condition.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo_base.dir/Condition.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/Condition.cc > CMakeFiles/muduo_base.dir/Condition.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/Condition.cc > CMakeFiles/muduo_base.dir/Condition.cc.i
 
 muduo/base/CMakeFiles/muduo_base.dir/Condition.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo_base.dir/Condition.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/Condition.cc -o CMakeFiles/muduo_base.dir/Condition.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/Condition.cc -o CMakeFiles/muduo_base.dir/Condition.cc.s
 
 muduo/base/CMakeFiles/muduo_base.dir/CountDownLatch.cc.o: muduo/base/CMakeFiles/muduo_base.dir/flags.make
 muduo/base/CMakeFiles/muduo_base.dir/CountDownLatch.cc.o: ../muduo/base/CountDownLatch.cc
 muduo/base/CMakeFiles/muduo_base.dir/CountDownLatch.cc.o: muduo/base/CMakeFiles/muduo_base.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object muduo/base/CMakeFiles/muduo_base.dir/CountDownLatch.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/CountDownLatch.cc.o -MF CMakeFiles/muduo_base.dir/CountDownLatch.cc.o.d -o CMakeFiles/muduo_base.dir/CountDownLatch.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/CountDownLatch.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/CountDownLatch.cc.o -MF CMakeFiles/muduo_base.dir/CountDownLatch.cc.o.d -o CMakeFiles/muduo_base.dir/CountDownLatch.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/CountDownLatch.cc
 
 muduo/base/CMakeFiles/muduo_base.dir/CountDownLatch.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo_base.dir/CountDownLatch.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/CountDownLatch.cc > CMakeFiles/muduo_base.dir/CountDownLatch.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/CountDownLatch.cc > CMakeFiles/muduo_base.dir/CountDownLatch.cc.i
 
 muduo/base/CMakeFiles/muduo_base.dir/CountDownLatch.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo_base.dir/CountDownLatch.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/CountDownLatch.cc -o CMakeFiles/muduo_base.dir/CountDownLatch.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/CountDownLatch.cc -o CMakeFiles/muduo_base.dir/CountDownLatch.cc.s
 
 muduo/base/CMakeFiles/muduo_base.dir/CurrentThread.cc.o: muduo/base/CMakeFiles/muduo_base.dir/flags.make
 muduo/base/CMakeFiles/muduo_base.dir/CurrentThread.cc.o: ../muduo/base/CurrentThread.cc
 muduo/base/CMakeFiles/muduo_base.dir/CurrentThread.cc.o: muduo/base/CMakeFiles/muduo_base.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object muduo/base/CMakeFiles/muduo_base.dir/CurrentThread.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/CurrentThread.cc.o -MF CMakeFiles/muduo_base.dir/CurrentThread.cc.o.d -o CMakeFiles/muduo_base.dir/CurrentThread.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/CurrentThread.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/CurrentThread.cc.o -MF CMakeFiles/muduo_base.dir/CurrentThread.cc.o.d -o CMakeFiles/muduo_base.dir/CurrentThread.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/CurrentThread.cc
 
 muduo/base/CMakeFiles/muduo_base.dir/CurrentThread.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo_base.dir/CurrentThread.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/CurrentThread.cc > CMakeFiles/muduo_base.dir/CurrentThread.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/CurrentThread.cc > CMakeFiles/muduo_base.dir/CurrentThread.cc.i
 
 muduo/base/CMakeFiles/muduo_base.dir/CurrentThread.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo_base.dir/CurrentThread.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/CurrentThread.cc -o CMakeFiles/muduo_base.dir/CurrentThread.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/CurrentThread.cc -o CMakeFiles/muduo_base.dir/CurrentThread.cc.s
 
 muduo/base/CMakeFiles/muduo_base.dir/Date.cc.o: muduo/base/CMakeFiles/muduo_base.dir/flags.make
 muduo/base/CMakeFiles/muduo_base.dir/Date.cc.o: ../muduo/base/Date.cc
 muduo/base/CMakeFiles/muduo_base.dir/Date.cc.o: muduo/base/CMakeFiles/muduo_base.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object muduo/base/CMakeFiles/muduo_base.dir/Date.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/Date.cc.o -MF CMakeFiles/muduo_base.dir/Date.cc.o.d -o CMakeFiles/muduo_base.dir/Date.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/Date.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/Date.cc.o -MF CMakeFiles/muduo_base.dir/Date.cc.o.d -o CMakeFiles/muduo_base.dir/Date.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/Date.cc
 
 muduo/base/CMakeFiles/muduo_base.dir/Date.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo_base.dir/Date.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/Date.cc > CMakeFiles/muduo_base.dir/Date.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/Date.cc > CMakeFiles/muduo_base.dir/Date.cc.i
 
 muduo/base/CMakeFiles/muduo_base.dir/Date.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo_base.dir/Date.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/Date.cc -o CMakeFiles/muduo_base.dir/Date.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/Date.cc -o CMakeFiles/muduo_base.dir/Date.cc.s
 
 muduo/base/CMakeFiles/muduo_base.dir/Exception.cc.o: muduo/base/CMakeFiles/muduo_base.dir/flags.make
 muduo/base/CMakeFiles/muduo_base.dir/Exception.cc.o: ../muduo/base/Exception.cc
 muduo/base/CMakeFiles/muduo_base.dir/Exception.cc.o: muduo/base/CMakeFiles/muduo_base.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object muduo/base/CMakeFiles/muduo_base.dir/Exception.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/Exception.cc.o -MF CMakeFiles/muduo_base.dir/Exception.cc.o.d -o CMakeFiles/muduo_base.dir/Exception.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/Exception.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/Exception.cc.o -MF CMakeFiles/muduo_base.dir/Exception.cc.o.d -o CMakeFiles/muduo_base.dir/Exception.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/Exception.cc
 
 muduo/base/CMakeFiles/muduo_base.dir/Exception.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo_base.dir/Exception.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/Exception.cc > CMakeFiles/muduo_base.dir/Exception.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/Exception.cc > CMakeFiles/muduo_base.dir/Exception.cc.i
 
 muduo/base/CMakeFiles/muduo_base.dir/Exception.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo_base.dir/Exception.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/Exception.cc -o CMakeFiles/muduo_base.dir/Exception.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/Exception.cc -o CMakeFiles/muduo_base.dir/Exception.cc.s
 
 muduo/base/CMakeFiles/muduo_base.dir/FileUtil.cc.o: muduo/base/CMakeFiles/muduo_base.dir/flags.make
 muduo/base/CMakeFiles/muduo_base.dir/FileUtil.cc.o: ../muduo/base/FileUtil.cc
 muduo/base/CMakeFiles/muduo_base.dir/FileUtil.cc.o: muduo/base/CMakeFiles/muduo_base.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object muduo/base/CMakeFiles/muduo_base.dir/FileUtil.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/FileUtil.cc.o -MF CMakeFiles/muduo_base.dir/FileUtil.cc.o.d -o CMakeFiles/muduo_base.dir/FileUtil.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/FileUtil.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/FileUtil.cc.o -MF CMakeFiles/muduo_base.dir/FileUtil.cc.o.d -o CMakeFiles/muduo_base.dir/FileUtil.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/FileUtil.cc
 
 muduo/base/CMakeFiles/muduo_base.dir/FileUtil.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo_base.dir/FileUtil.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/FileUtil.cc > CMakeFiles/muduo_base.dir/FileUtil.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/FileUtil.cc > CMakeFiles/muduo_base.dir/FileUtil.cc.i
 
 muduo/base/CMakeFiles/muduo_base.dir/FileUtil.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo_base.dir/FileUtil.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/FileUtil.cc -o CMakeFiles/muduo_base.dir/FileUtil.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/FileUtil.cc -o CMakeFiles/muduo_base.dir/FileUtil.cc.s
 
 muduo/base/CMakeFiles/muduo_base.dir/LogFile.cc.o: muduo/base/CMakeFiles/muduo_base.dir/flags.make
 muduo/base/CMakeFiles/muduo_base.dir/LogFile.cc.o: ../muduo/base/LogFile.cc
 muduo/base/CMakeFiles/muduo_base.dir/LogFile.cc.o: muduo/base/CMakeFiles/muduo_base.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object muduo/base/CMakeFiles/muduo_base.dir/LogFile.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/LogFile.cc.o -MF CMakeFiles/muduo_base.dir/LogFile.cc.o.d -o CMakeFiles/muduo_base.dir/LogFile.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/LogFile.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/LogFile.cc.o -MF CMakeFiles/muduo_base.dir/LogFile.cc.o.d -o CMakeFiles/muduo_base.dir/LogFile.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/LogFile.cc
 
 muduo/base/CMakeFiles/muduo_base.dir/LogFile.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo_base.dir/LogFile.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/LogFile.cc > CMakeFiles/muduo_base.dir/LogFile.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/LogFile.cc > CMakeFiles/muduo_base.dir/LogFile.cc.i
 
 muduo/base/CMakeFiles/muduo_base.dir/LogFile.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo_base.dir/LogFile.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/LogFile.cc -o CMakeFiles/muduo_base.dir/LogFile.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/LogFile.cc -o CMakeFiles/muduo_base.dir/LogFile.cc.s
 
 muduo/base/CMakeFiles/muduo_base.dir/Logging.cc.o: muduo/base/CMakeFiles/muduo_base.dir/flags.make
 muduo/base/CMakeFiles/muduo_base.dir/Logging.cc.o: ../muduo/base/Logging.cc
 muduo/base/CMakeFiles/muduo_base.dir/Logging.cc.o: muduo/base/CMakeFiles/muduo_base.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object muduo/base/CMakeFiles/muduo_base.dir/Logging.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/Logging.cc.o -MF CMakeFiles/muduo_base.dir/Logging.cc.o.d -o CMakeFiles/muduo_base.dir/Logging.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/Logging.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/Logging.cc.o -MF CMakeFiles/muduo_base.dir/Logging.cc.o.d -o CMakeFiles/muduo_base.dir/Logging.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/Logging.cc
 
 muduo/base/CMakeFiles/muduo_base.dir/Logging.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo_base.dir/Logging.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/Logging.cc > CMakeFiles/muduo_base.dir/Logging.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/Logging.cc > CMakeFiles/muduo_base.dir/Logging.cc.i
 
 muduo/base/CMakeFiles/muduo_base.dir/Logging.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo_base.dir/Logging.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/Logging.cc -o CMakeFiles/muduo_base.dir/Logging.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/Logging.cc -o CMakeFiles/muduo_base.dir/Logging.cc.s
 
 muduo/base/CMakeFiles/muduo_base.dir/LogStream.cc.o: muduo/base/CMakeFiles/muduo_base.dir/flags.make
 muduo/base/CMakeFiles/muduo_base.dir/LogStream.cc.o: ../muduo/base/LogStream.cc
 muduo/base/CMakeFiles/muduo_base.dir/LogStream.cc.o: muduo/base/CMakeFiles/muduo_base.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object muduo/base/CMakeFiles/muduo_base.dir/LogStream.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/LogStream.cc.o -MF CMakeFiles/muduo_base.dir/LogStream.cc.o.d -o CMakeFiles/muduo_base.dir/LogStream.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/LogStream.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/LogStream.cc.o -MF CMakeFiles/muduo_base.dir/LogStream.cc.o.d -o CMakeFiles/muduo_base.dir/LogStream.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/LogStream.cc
 
 muduo/base/CMakeFiles/muduo_base.dir/LogStream.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo_base.dir/LogStream.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/LogStream.cc > CMakeFiles/muduo_base.dir/LogStream.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/LogStream.cc > CMakeFiles/muduo_base.dir/LogStream.cc.i
 
 muduo/base/CMakeFiles/muduo_base.dir/LogStream.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo_base.dir/LogStream.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/LogStream.cc -o CMakeFiles/muduo_base.dir/LogStream.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/LogStream.cc -o CMakeFiles/muduo_base.dir/LogStream.cc.s
 
 muduo/base/CMakeFiles/muduo_base.dir/ProcessInfo.cc.o: muduo/base/CMakeFiles/muduo_base.dir/flags.make
 muduo/base/CMakeFiles/muduo_base.dir/ProcessInfo.cc.o: ../muduo/base/ProcessInfo.cc
 muduo/base/CMakeFiles/muduo_base.dir/ProcessInfo.cc.o: muduo/base/CMakeFiles/muduo_base.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object muduo/base/CMakeFiles/muduo_base.dir/ProcessInfo.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/ProcessInfo.cc.o -MF CMakeFiles/muduo_base.dir/ProcessInfo.cc.o.d -o CMakeFiles/muduo_base.dir/ProcessInfo.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/ProcessInfo.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/ProcessInfo.cc.o -MF CMakeFiles/muduo_base.dir/ProcessInfo.cc.o.d -o CMakeFiles/muduo_base.dir/ProcessInfo.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/ProcessInfo.cc
 
 muduo/base/CMakeFiles/muduo_base.dir/ProcessInfo.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo_base.dir/ProcessInfo.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/ProcessInfo.cc > CMakeFiles/muduo_base.dir/ProcessInfo.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/ProcessInfo.cc > CMakeFiles/muduo_base.dir/ProcessInfo.cc.i
 
 muduo/base/CMakeFiles/muduo_base.dir/ProcessInfo.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo_base.dir/ProcessInfo.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/ProcessInfo.cc -o CMakeFiles/muduo_base.dir/ProcessInfo.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/ProcessInfo.cc -o CMakeFiles/muduo_base.dir/ProcessInfo.cc.s
 
 muduo/base/CMakeFiles/muduo_base.dir/Timestamp.cc.o: muduo/base/CMakeFiles/muduo_base.dir/flags.make
 muduo/base/CMakeFiles/muduo_base.dir/Timestamp.cc.o: ../muduo/base/Timestamp.cc
 muduo/base/CMakeFiles/muduo_base.dir/Timestamp.cc.o: muduo/base/CMakeFiles/muduo_base.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object muduo/base/CMakeFiles/muduo_base.dir/Timestamp.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/Timestamp.cc.o -MF CMakeFiles/muduo_base.dir/Timestamp.cc.o.d -o CMakeFiles/muduo_base.dir/Timestamp.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/Timestamp.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/Timestamp.cc.o -MF CMakeFiles/muduo_base.dir/Timestamp.cc.o.d -o CMakeFiles/muduo_base.dir/Timestamp.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/Timestamp.cc
 
 muduo/base/CMakeFiles/muduo_base.dir/Timestamp.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo_base.dir/Timestamp.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/Timestamp.cc > CMakeFiles/muduo_base.dir/Timestamp.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/Timestamp.cc > CMakeFiles/muduo_base.dir/Timestamp.cc.i
 
 muduo/base/CMakeFiles/muduo_base.dir/Timestamp.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo_base.dir/Timestamp.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/Timestamp.cc -o CMakeFiles/muduo_base.dir/Timestamp.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/Timestamp.cc -o CMakeFiles/muduo_base.dir/Timestamp.cc.s
 
 muduo/base/CMakeFiles/muduo_base.dir/Thread.cc.o: muduo/base/CMakeFiles/muduo_base.dir/flags.make
 muduo/base/CMakeFiles/muduo_base.dir/Thread.cc.o: ../muduo/base/Thread.cc
 muduo/base/CMakeFiles/muduo_base.dir/Thread.cc.o: muduo/base/CMakeFiles/muduo_base.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object muduo/base/CMakeFiles/muduo_base.dir/Thread.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/Thread.cc.o -MF CMakeFiles/muduo_base.dir/Thread.cc.o.d -o CMakeFiles/muduo_base.dir/Thread.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/Thread.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/Thread.cc.o -MF CMakeFiles/muduo_base.dir/Thread.cc.o.d -o CMakeFiles/muduo_base.dir/Thread.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/Thread.cc
 
 muduo/base/CMakeFiles/muduo_base.dir/Thread.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo_base.dir/Thread.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/Thread.cc > CMakeFiles/muduo_base.dir/Thread.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/Thread.cc > CMakeFiles/muduo_base.dir/Thread.cc.i
 
 muduo/base/CMakeFiles/muduo_base.dir/Thread.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo_base.dir/Thread.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/Thread.cc -o CMakeFiles/muduo_base.dir/Thread.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/Thread.cc -o CMakeFiles/muduo_base.dir/Thread.cc.s
 
 muduo/base/CMakeFiles/muduo_base.dir/ThreadPool.cc.o: muduo/base/CMakeFiles/muduo_base.dir/flags.make
 muduo/base/CMakeFiles/muduo_base.dir/ThreadPool.cc.o: ../muduo/base/ThreadPool.cc
 muduo/base/CMakeFiles/muduo_base.dir/ThreadPool.cc.o: muduo/base/CMakeFiles/muduo_base.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object muduo/base/CMakeFiles/muduo_base.dir/ThreadPool.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/ThreadPool.cc.o -MF CMakeFiles/muduo_base.dir/ThreadPool.cc.o.d -o CMakeFiles/muduo_base.dir/ThreadPool.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/ThreadPool.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/ThreadPool.cc.o -MF CMakeFiles/muduo_base.dir/ThreadPool.cc.o.d -o CMakeFiles/muduo_base.dir/ThreadPool.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/ThreadPool.cc
 
 muduo/base/CMakeFiles/muduo_base.dir/ThreadPool.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo_base.dir/ThreadPool.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/ThreadPool.cc > CMakeFiles/muduo_base.dir/ThreadPool.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/ThreadPool.cc > CMakeFiles/muduo_base.dir/ThreadPool.cc.i
 
 muduo/base/CMakeFiles/muduo_base.dir/ThreadPool.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo_base.dir/ThreadPool.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/ThreadPool.cc -o CMakeFiles/muduo_base.dir/ThreadPool.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/ThreadPool.cc -o CMakeFiles/muduo_base.dir/ThreadPool.cc.s
 
 muduo/base/CMakeFiles/muduo_base.dir/TimeZone.cc.o: muduo/base/CMakeFiles/muduo_base.dir/flags.make
 muduo/base/CMakeFiles/muduo_base.dir/TimeZone.cc.o: ../muduo/base/TimeZone.cc
 muduo/base/CMakeFiles/muduo_base.dir/TimeZone.cc.o: muduo/base/CMakeFiles/muduo_base.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object muduo/base/CMakeFiles/muduo_base.dir/TimeZone.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/TimeZone.cc.o -MF CMakeFiles/muduo_base.dir/TimeZone.cc.o.d -o CMakeFiles/muduo_base.dir/TimeZone.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/TimeZone.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT muduo/base/CMakeFiles/muduo_base.dir/TimeZone.cc.o -MF CMakeFiles/muduo_base.dir/TimeZone.cc.o.d -o CMakeFiles/muduo_base.dir/TimeZone.cc.o -c /home/muxin/hdd/muduo_rewrite/muduo/base/TimeZone.cc
 
 muduo/base/CMakeFiles/muduo_base.dir/TimeZone.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo_base.dir/TimeZone.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/TimeZone.cc > CMakeFiles/muduo_base.dir/TimeZone.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/muduo/base/TimeZone.cc > CMakeFiles/muduo_base.dir/TimeZone.cc.i
 
 muduo/base/CMakeFiles/muduo_base.dir/TimeZone.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo_base.dir/TimeZone.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/TimeZone.cc -o CMakeFiles/muduo_base.dir/TimeZone.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/muduo/base && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/muduo/base/TimeZone.cc -o CMakeFiles/muduo_base.dir/TimeZone.cc.s
 
 # Object files for target muduo_base
 muduo_base_OBJECTS = \

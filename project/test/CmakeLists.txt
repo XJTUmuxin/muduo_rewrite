@@ -12,6 +12,8 @@ target_link_libraries(serial_test project_file)
 
 add_executable(filesystem filesystem.cc)
 
+add_executable(inotify_test inotify_test.cc)
+
 add_executable(base64_test base64_test.cc)
 target_link_libraries(base64_test project_net)
 

@@ -73,15 +73,15 @@ project/test/CMakeFiles/FileNode_test.dir/FileNode_test.cc.o: project/test/CMake
 project/test/CMakeFiles/FileNode_test.dir/FileNode_test.cc.o: ../project/test/FileNode_test.cc
 project/test/CMakeFiles/FileNode_test.dir/FileNode_test.cc.o: project/test/CMakeFiles/FileNode_test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object project/test/CMakeFiles/FileNode_test.dir/FileNode_test.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/project/test && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT project/test/CMakeFiles/FileNode_test.dir/FileNode_test.cc.o -MF CMakeFiles/FileNode_test.dir/FileNode_test.cc.o.d -o CMakeFiles/FileNode_test.dir/FileNode_test.cc.o -c /home/muxin/hdd/muduo_rewrite/project/test/FileNode_test.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/project/test && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT project/test/CMakeFiles/FileNode_test.dir/FileNode_test.cc.o -MF CMakeFiles/FileNode_test.dir/FileNode_test.cc.o.d -o CMakeFiles/FileNode_test.dir/FileNode_test.cc.o -c /home/muxin/hdd/muduo_rewrite/project/test/FileNode_test.cc
 
 project/test/CMakeFiles/FileNode_test.dir/FileNode_test.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FileNode_test.dir/FileNode_test.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/project/test && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/project/test/FileNode_test.cc > CMakeFiles/FileNode_test.dir/FileNode_test.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/project/test && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/project/test/FileNode_test.cc > CMakeFiles/FileNode_test.dir/FileNode_test.cc.i
 
 project/test/CMakeFiles/FileNode_test.dir/FileNode_test.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FileNode_test.dir/FileNode_test.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/project/test && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/project/test/FileNode_test.cc -o CMakeFiles/FileNode_test.dir/FileNode_test.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/project/test && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/project/test/FileNode_test.cc -o CMakeFiles/FileNode_test.dir/FileNode_test.cc.s
 
 # Object files for target FileNode_test
 FileNode_test_OBJECTS = \

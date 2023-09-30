@@ -12,7 +12,9 @@ Client::Client(EventLoop* loop,const InetAddress& serverAddr,const fs::path& dir
   : client_(loop,serverAddr,"Client"),
     codec_(std::bind(&Client::onStringMessage, this, _1, _2, _3)),
     localDir_(new FileNode(dirPath)),
-    dirPath_(dirPath)
+    dirPath_(dirPath),
+    inotifyFd_(inotify_init()),
+    fileWatchChannel_(new Channel(client_.getLoop(),inotifyFd_))
 {
   client_.setConnectionCallback(  
     std::bind(&Client::onConnection, this, _1));

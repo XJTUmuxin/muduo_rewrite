@@ -5,6 +5,7 @@
 #include "muduo/base/Mutex.h"
 #include "muduo/net/EventLoop.h"
 #include "muduo/net/TcpClient.h"
+#include "muduo/net/Channel.h"
 #include "project/file/FileNode.h"
 #include "project/net/codec.h"
 #include "project/net/command.h"
@@ -12,6 +13,7 @@
 #include <functional>
 #include <filesystem>
 #include <project/net/Context.h>
+#include <sys/inotify.h>
 
 namespace project
 {
@@ -56,6 +58,8 @@ private:
   muduo::MutexLock dirMutex_;
   std::shared_ptr<project::file::FileNode> localDir_ GUARDED_BY(dirMutex_);
   fs::path dirPath_;
+  int inotifyFd_;
+  std::shared_ptr<muduo_net::Channel> fileWatchChannel_;
 };
 
 }

@@ -73,15 +73,15 @@ project/test/CMakeFiles/filesystem.dir/filesystem.cc.o: project/test/CMakeFiles/
 project/test/CMakeFiles/filesystem.dir/filesystem.cc.o: ../project/test/filesystem.cc
 project/test/CMakeFiles/filesystem.dir/filesystem.cc.o: project/test/CMakeFiles/filesystem.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object project/test/CMakeFiles/filesystem.dir/filesystem.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/project/test && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT project/test/CMakeFiles/filesystem.dir/filesystem.cc.o -MF CMakeFiles/filesystem.dir/filesystem.cc.o.d -o CMakeFiles/filesystem.dir/filesystem.cc.o -c /home/muxin/hdd/muduo_rewrite/project/test/filesystem.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/project/test && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT project/test/CMakeFiles/filesystem.dir/filesystem.cc.o -MF CMakeFiles/filesystem.dir/filesystem.cc.o.d -o CMakeFiles/filesystem.dir/filesystem.cc.o -c /home/muxin/hdd/muduo_rewrite/project/test/filesystem.cc
 
 project/test/CMakeFiles/filesystem.dir/filesystem.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/filesystem.dir/filesystem.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/project/test && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/project/test/filesystem.cc > CMakeFiles/filesystem.dir/filesystem.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/project/test && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/project/test/filesystem.cc > CMakeFiles/filesystem.dir/filesystem.cc.i
 
 project/test/CMakeFiles/filesystem.dir/filesystem.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/filesystem.dir/filesystem.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/project/test && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/project/test/filesystem.cc -o CMakeFiles/filesystem.dir/filesystem.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/project/test && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/project/test/filesystem.cc -o CMakeFiles/filesystem.dir/filesystem.cc.s
 
 # Object files for target filesystem
 filesystem_OBJECTS = \
