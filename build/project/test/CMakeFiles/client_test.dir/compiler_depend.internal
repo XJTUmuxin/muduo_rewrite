@@ -3,6 +3,7 @@
 
 project/test/CMakeFiles/client_test.dir/client_test.cc.o
  /home/muxin/hdd/muduo_rewrite/project/test/client_test.cc
+ /usr/include/stdc-predef.h
  /home/muxin/hdd/muduo_rewrite/muduo/base/Logging.h
  /home/muxin/hdd/muduo_rewrite/muduo/base/LogStream.h
  /home/muxin/hdd/muduo_rewrite/muduo/base/noncopyable.h
@@ -13,12 +14,11 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o
  /usr/include/features-time64.h
  /usr/include/x86_64-linux-gnu/bits/wordsize.h
  /usr/include/x86_64-linux-gnu/bits/timesize.h
- /usr/include/stdc-predef.h
  /usr/include/x86_64-linux-gnu/sys/cdefs.h
  /usr/include/x86_64-linux-gnu/bits/long-double.h
  /usr/include/x86_64-linux-gnu/gnu/stubs.h
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h
  /usr/include/strings.h
@@ -27,7 +27,6 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h
  /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h
  /usr/include/c++/11/pstl/pstl_config.h
- /usr/include/tbb/tbb.h
  /usr/include/c++/11/bits/stringfwd.h
  /usr/include/c++/11/bits/memoryfwd.h
  /usr/include/c++/11/bits/postypes.h
@@ -35,7 +34,7 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o
  /usr/include/wchar.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/stdarg.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h
  /usr/include/x86_64-linux-gnu/bits/wchar.h
  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h
  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h
@@ -43,7 +42,7 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o
  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h
  /home/muxin/hdd/muduo_rewrite/muduo/base/Types.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/stdint.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h
  /usr/include/stdint.h
  /usr/include/x86_64-linux-gnu/bits/types.h
  /usr/include/x86_64-linux-gnu/bits/typesizes.h
@@ -185,7 +184,8 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o
  /usr/include/c++/11/bits/atomic_lockfree_defines.h
  /usr/include/c++/11/bits/atomic_wait.h
  /usr/include/c++/11/climits
- /usr/lib/llvm-14/lib/clang/14.0.0/include/limits.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h
  /usr/include/limits.h
  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h
  /usr/include/x86_64-linux-gnu/bits/local_lim.h
@@ -213,7 +213,6 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o
  /usr/include/c++/11/exception
  /usr/include/c++/11/bits/exception_ptr.h
  /usr/include/c++/11/bits/cxxabi_init_exception.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/__stddef_max_align_t.h
  /usr/include/c++/11/typeinfo
  /usr/include/c++/11/bits/nested_exception.h
  /usr/include/c++/11/functional
@@ -428,9 +427,18 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o
  /usr/local/include/nlohmann/ordered_map.hpp
  /usr/local/include/nlohmann/detail/macro_unscope.hpp
  /usr/local/include/nlohmann/thirdparty/hedley/hedley_undef.hpp
+ /home/muxin/hdd/muduo_rewrite/project/file/InotifyFileNode.h
+ /usr/include/x86_64-linux-gnu/sys/inotify.h
+ /usr/include/x86_64-linux-gnu/bits/inotify.h
  /home/muxin/hdd/muduo_rewrite/project/net/codec.h
  /home/muxin/hdd/muduo_rewrite/project/net/command.h
  /home/muxin/hdd/muduo_rewrite/project/net/Context.h
+ /usr/include/fcntl.h
+ /usr/include/x86_64-linux-gnu/bits/fcntl.h
+ /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h
+ /usr/include/linux/falloc.h
+ /usr/include/x86_64-linux-gnu/bits/stat.h
+ /usr/include/x86_64-linux-gnu/bits/struct_stat.h
  /usr/include/c++/11/fstream
  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h
@@ -446,17 +454,14 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o
  /home/muxin/anaconda3/include/boost/config.hpp
  /home/muxin/anaconda3/include/boost/config/user.hpp
  /home/muxin/anaconda3/include/boost/config/detail/select_compiler_config.hpp
- /home/muxin/anaconda3/include/boost/config/compiler/clang.hpp
+ /home/muxin/anaconda3/include/boost/config/compiler/gcc.hpp
  /home/muxin/anaconda3/include/boost/config/detail/select_stdlib_config.hpp
  /home/muxin/anaconda3/include/boost/config/stdlib/libstdcpp3.hpp
- /usr/include/c++/11/memory_resource
- /usr/include/c++/11/shared_mutex
  /home/muxin/anaconda3/include/boost/config/detail/select_platform_config.hpp
  /home/muxin/anaconda3/include/boost/config/platform/linux.hpp
  /home/muxin/anaconda3/include/boost/config/detail/posix_features.hpp
  /home/muxin/anaconda3/include/boost/config/detail/suffix.hpp
  /home/muxin/anaconda3/include/boost/config/helper_macros.hpp
- /usr/include/c++/11/variant
  /home/muxin/anaconda3/include/boost/version.hpp
  /home/muxin/anaconda3/include/boost/core/ignore_unused.hpp
  /home/muxin/anaconda3/include/boost/static_assert.hpp
@@ -477,6 +482,7 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o
  /home/muxin/anaconda3/include/boost/beast/core/impl/string.ipp
  /home/muxin/anaconda3/include/boost/beast/core/detail/string.hpp
  /home/muxin/anaconda3/include/boost/beast/core/detail/base64.ipp
- /usr/include/x86_64-linux-gnu/sys/inotify.h
- /usr/include/x86_64-linux-gnu/bits/inotify.h
+ /usr/include/c++/11/set
+ /usr/include/c++/11/bits/stl_set.h
+ /usr/include/c++/11/bits/stl_multiset.h
 

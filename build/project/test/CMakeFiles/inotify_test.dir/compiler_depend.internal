@@ -3,19 +3,19 @@
 
 project/test/CMakeFiles/inotify_test.dir/inotify_test.cc.o
  /home/muxin/hdd/muduo_rewrite/project/test/inotify_test.cc
+ /usr/include/stdc-predef.h
  /usr/include/stdio.h
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
  /usr/include/features.h
  /usr/include/features-time64.h
  /usr/include/x86_64-linux-gnu/bits/wordsize.h
  /usr/include/x86_64-linux-gnu/bits/timesize.h
- /usr/include/stdc-predef.h
  /usr/include/x86_64-linux-gnu/sys/cdefs.h
  /usr/include/x86_64-linux-gnu/bits/long-double.h
  /usr/include/x86_64-linux-gnu/gnu/stubs.h
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/stdarg.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h
  /usr/include/x86_64-linux-gnu/bits/types.h
  /usr/include/x86_64-linux-gnu/bits/typesizes.h
  /usr/include/x86_64-linux-gnu/bits/time64.h
@@ -39,7 +39,6 @@ project/test/CMakeFiles/inotify_test.dir/inotify_test.cc.o
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h
  /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h
  /usr/include/c++/11/pstl/pstl_config.h
- /usr/include/tbb/tbb.h
  /usr/include/stdlib.h
  /usr/include/x86_64-linux-gnu/bits/waitflags.h
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h
@@ -80,7 +79,7 @@ project/test/CMakeFiles/inotify_test.dir/inotify_test.cc.o
  /usr/include/c++/11/cassert
  /usr/include/assert.h
  /usr/include/x86_64-linux-gnu/sys/inotify.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/stdint.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h
  /usr/include/stdint.h
  /usr/include/x86_64-linux-gnu/bits/wchar.h
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h

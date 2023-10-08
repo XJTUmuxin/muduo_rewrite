@@ -1,5 +1,6 @@
 #ifndef PROJECT_NET_CONTEXT_H
 #define PROJECT_NET_CONTEXT_H
+#include <fcntl.h>
 #include <fstream>
 #include <string>
 #include <filesystem>
@@ -27,11 +28,13 @@ public:
   TransferContext(const fs::path& filePath,const fs::path& shortFilePath)
     : shortFilePath_(shortFilePath),
       fileSize_(fs::file_size(filePath)),
+      transedSize_(0),
       modifyTime_(std::chrono::system_clock::to_time_t(std::chrono::file_clock::to_sys(
         fs::last_write_time(filePath)))),
-      transferFileStream_(filePath)
+      transferFileStream_(filePath),
+      packNo_(0)
   {
-    
+
   }
   ~TransferContext(){
     transferFileStream_.close();
@@ -47,11 +50,15 @@ public:
     if(bytesRead < bytes){
       fileData.resize(bytesRead);
     }
-
+    packNo_++;
+    transedSize_+=bytesRead;
     return fileData;
   }
   bool isOpen(){
     return transferFileStream_.is_open();
+  }
+  bool isReadComplete(){
+    return transedSize_==fileSize_;
   }
   size_t getFileSize(){
     return fileSize_;
@@ -62,11 +69,17 @@ public:
   time_t getModifyTime(){
     return modifyTime_;
   }
+  size_t getPackNo(){
+    return packNo_;
+  }
 private:
   fs::path shortFilePath_;
   size_t fileSize_;
+  size_t transedSize_;
   time_t modifyTime_;
   std::ifstream transferFileStream_;
+  size_t packNo_;
+  int fd_;
 };
 typedef std::shared_ptr<TransferContext> TransferContextPtr;
 typedef std::deque<TransferContextPtr> TransferContextQue;
@@ -75,9 +88,10 @@ class ReceiveContext{
 public:
   ReceiveContext(const fs::path& filePath)
     : receiveFileStream_(filePath),
-      writeBytes_(0)
+      writeBytes_(0),
+      packNo_(0)
   {
-    LOG_INFO << "Receive context construct";
+    LOG_INFO << "Receive context of "<< filePath<<" construct";
   }
   ~ReceiveContext(){
     LOG_INFO << "Receive context destroy";
@@ -96,10 +110,15 @@ public:
   void write(const char* buf,size_t len){
     receiveFileStream_.write(buf,len);
     writeBytes_ += len;
+    packNo_++;
+  }
+  size_t getPackNo(){
+    return packNo_;
   }
 private:
   std::ofstream receiveFileStream_;
   size_t writeBytes_;
+  size_t packNo_;
 };
 typedef std::shared_ptr<ReceiveContext> ReceiveContextPtr;
 typedef std::map<std::string,ReceiveContextPtr> ReceiveContextMap;
@@ -110,9 +129,9 @@ struct Context{
 };
 typedef std::shared_ptr<Context> ContextPtr;
 
-void transferFile(const muduo_net::TcpConnectionPtr& conn,const fs::path& dirPath,const fs::path& filePath,LengthHeaderCodec& codec);
+int transferFile(const muduo_net::TcpConnectionPtr& conn,const fs::path& dirPath,const fs::path& filePath,LengthHeaderCodec& codec);
 
-void continueTransferFile(const muduo_net::TcpConnectionPtr& conn,LengthHeaderCodec& codec);
+int continueTransferFile(const muduo_net::TcpConnectionPtr& conn,LengthHeaderCodec& codec);
 
 std::string base64_encode(std::uint8_t const *data, std::size_t len);
 std::string base64_encode(boost::string_view s);

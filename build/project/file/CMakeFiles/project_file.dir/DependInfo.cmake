@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/muxin/hdd/muduo_rewrite/project/file/FileNode.cc" "project/file/CMakeFiles/project_file.dir/FileNode.cc.o" "gcc" "project/file/CMakeFiles/project_file.dir/FileNode.cc.o.d"
+  "/home/muxin/hdd/muduo_rewrite/project/file/InotifyFileNode.cc" "project/file/CMakeFiles/project_file.dir/InotifyFileNode.cc.o" "gcc" "project/file/CMakeFiles/project_file.dir/InotifyFileNode.cc.o.d"
   )
 
 # Targets to which this target links.

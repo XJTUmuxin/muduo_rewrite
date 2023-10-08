@@ -1,5 +1,6 @@
 set(file_SRCS
   FileNode.cc
+  InotifyFileNode.cc
 )
 add_library(project_file ${file_SRCS})
 

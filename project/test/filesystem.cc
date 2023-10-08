@@ -18,22 +18,9 @@ void TraverseDirectory(const fs::path& directoryPath, int depth = 0) {
 }
 
 int main() {
-    fs::path directoryPath("/home/muxin/hdd/muduo_rewrite/muduo/net"); // 替换为你要遍历的目录路径
-    if (fs::exists(directoryPath) && fs::is_directory(directoryPath)) {
-        std::cout << "Directory Structure:" << std::endl;
-        TraverseDirectory(directoryPath);
-    } else {
-        std::cerr << "Invalid directory path." << std::endl;
-    }
-    fs::path dirPath = "/test1/test2/test.test";
-    std::cout<<dirPath<<std::endl;
-    for(auto it = dirPath.begin();it!=dirPath.end();++it){
-        std::cout<<*it<<std::endl;
-    }
-    fs::path rootPath = dirPath.root_path();
-    std::cout<<rootPath<<std::endl;
-    fs::path filePath = dirPath / "test.test";
-    std::cout<<filePath<<std::endl;
-
+    fs::path shortPath("公式15.jpg");
+    std::cout<<shortPath<<std::endl;
+    auto iter = shortPath.begin();
+    std::cout << *iter << std::endl;
     return 0;
 }

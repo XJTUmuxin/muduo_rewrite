@@ -20,11 +20,13 @@ std::string project::net::base64_decode(boost::string_view data) {
     dest.resize(result.first);
     return dest;
 }
-void project::net::transferFile(const muduo_net::TcpConnectionPtr& conn,const fs::path& dirPath,const fs::path& filePath,LengthHeaderCodec& codec)
+int project::net::transferFile(const muduo_net::TcpConnectionPtr& conn,const fs::path& dirPath,const fs::path& filePath,LengthHeaderCodec& codec)
 {
   const std::any& context = conn->getContext();
   assert(context.has_value() && context.type() == typeid(ContextPtr));
   const ContextPtr& contextPtr = any_cast<const ContextPtr&>(context);
+
+  int ret = -1;
 
   TransferContextPtr transferContextPtr(new TransferContext(dirPath / filePath,filePath));
   if(transferContextPtr->isOpen()){
@@ -40,27 +42,35 @@ void project::net::transferFile(const muduo_net::TcpConnectionPtr& conn,const fs
     jsonData["mTime"] = modifyTime;
     jsonData["content"] = std::move(base64_encode(fileData));
     std::string message = std::move(jsonData.dump());
-    if(conn && realBlockSize>0){
+    if(conn){
+      LOG_INFO << "Sending file "<<filePath<<" package no "<<transferContextPtr->getPackNo();
+      if(transferContextPtr->isReadComplete()){
+        LOG_INFO << "Sending end "<<filePath;
+        ret = 0;
+      }
+      else{
+        contextPtr->transferContextQue.push_back(transferContextPtr);
+        ret = 1;
+      }
       codec.send(get_pointer(conn),message);
-      LOG_INFO << "Sending file "<<filePath;
-    }
-    if(realBlockSize<BlockSize){
-      LOG_INFO << "Sending end "<<filePath;
-    }
-    else{
-      contextPtr->transferContextQue.push_back(transferContextPtr);
     }
   }
   else{
     LOG_INFO << "No such file";
+    ret = -1;
   }
+  return ret;
 }
 
-void project::net::continueTransferFile(const muduo_net::TcpConnectionPtr& conn,LengthHeaderCodec& codec)
+int project::net::continueTransferFile(const muduo_net::TcpConnectionPtr& conn,LengthHeaderCodec& codec)
 {
   const std::any& context = conn->getContext();
   assert(context.has_value() && context.type() == typeid(ContextPtr));
   const ContextPtr& contextPtr = any_cast<const ContextPtr&>(context);
+  LOG_INFO <<"Transfer context num "<<contextPtr->transferContextQue.size();
+
+  int ret = -1;
+
   if(!contextPtr->transferContextQue.empty()){
     TransferContextPtr& transferContextPtr = contextPtr->transferContextQue.front();
     size_t fileSize = transferContextPtr->getFileSize();
@@ -75,13 +85,21 @@ void project::net::continueTransferFile(const muduo_net::TcpConnectionPtr& conn,
     jsonData["mTime"] = modifyTime;
     jsonData["content"] = std::move(base64_encode(fileData));
     std::string message = std::move(jsonData.dump());
-    if(conn && realBlockSize>0){
+    if(conn){
+      LOG_INFO << "Sending file "<<filePath<<" package no "<<transferContextPtr->getPackNo();
+      if(transferContextPtr->isReadComplete()){
+        contextPtr->transferContextQue.pop_front();
+        LOG_INFO << "Sending end "<<filePath;
+        ret = 0;
+      }
+      else{
+        ret = 1;
+      }
       codec.send(get_pointer(conn),message);
-      LOG_INFO << "Sending file "<<filePath;
-    }
-    if(realBlockSize<BlockSize){
-      contextPtr->transferContextQue.pop_front();
-      LOG_INFO << "Sending end "<<filePath;
     }
   }
+  else{
+    ret = -1;
+  }
+  return ret;
 }

@@ -70,6 +70,8 @@ public:
   {
     
   }
+  FileNode() = default;
+  
   ~FileNode() = default;
 
   void compare(const FileNode& fileNode,DiffSets& diffSets,fs::path currentPath);
@@ -85,10 +87,11 @@ public:
   void print(); // for Debug
 private:
   void addAllToSet(DiffSet& diffSet,fs::path currentPath);
+  void printLevel(int level); // for Debug
   std::map<fs::path,std::shared_ptr<FileNode>> children_;
   bool isDirctory_;
   std::time_t modifyTime_;
-  void printLevel(int level); // for Debug
+
 };
 typedef std::shared_ptr<FileNode> NodePtr;
 }

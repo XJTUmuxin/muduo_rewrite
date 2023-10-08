@@ -44,6 +44,8 @@ private:
 
   void postLocalFile(const muduo_net::TcpConnectionPtr& conn, const project::file::File& file);
 
+  void handlePost(const muduo_net::TcpConnectionPtr& conn,const json& jsonData);
+
   typedef std::set<muduo_net::TcpConnectionPtr> ConnectionList;
   muduo_net::TcpServer server_;
   LengthHeaderCodec codec_;

@@ -209,6 +209,30 @@ FileNode.cc.s:
 	cd /home/muxin/hdd/muduo_rewrite/build && $(MAKE) $(MAKESILENT) -f project/file/CMakeFiles/project_file.dir/build.make project/file/CMakeFiles/project_file.dir/FileNode.cc.s
 .PHONY : FileNode.cc.s
 
+InotifyFileNode.o: InotifyFileNode.cc.o
+.PHONY : InotifyFileNode.o
+
+# target to build an object file
+InotifyFileNode.cc.o:
+	cd /home/muxin/hdd/muduo_rewrite/build && $(MAKE) $(MAKESILENT) -f project/file/CMakeFiles/project_file.dir/build.make project/file/CMakeFiles/project_file.dir/InotifyFileNode.cc.o
+.PHONY : InotifyFileNode.cc.o
+
+InotifyFileNode.i: InotifyFileNode.cc.i
+.PHONY : InotifyFileNode.i
+
+# target to preprocess a source file
+InotifyFileNode.cc.i:
+	cd /home/muxin/hdd/muduo_rewrite/build && $(MAKE) $(MAKESILENT) -f project/file/CMakeFiles/project_file.dir/build.make project/file/CMakeFiles/project_file.dir/InotifyFileNode.cc.i
+.PHONY : InotifyFileNode.cc.i
+
+InotifyFileNode.s: InotifyFileNode.cc.s
+.PHONY : InotifyFileNode.s
+
+# target to generate assembly for a file
+InotifyFileNode.cc.s:
+	cd /home/muxin/hdd/muduo_rewrite/build && $(MAKE) $(MAKESILENT) -f project/file/CMakeFiles/project_file.dir/build.make project/file/CMakeFiles/project_file.dir/InotifyFileNode.cc.s
+.PHONY : InotifyFileNode.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -226,6 +250,9 @@ help:
 	@echo "... FileNode.o"
 	@echo "... FileNode.i"
 	@echo "... FileNode.s"
+	@echo "... InotifyFileNode.o"
+	@echo "... InotifyFileNode.i"
+	@echo "... InotifyFileNode.s"
 .PHONY : help
 
 

@@ -73,27 +73,43 @@ project/file/CMakeFiles/project_file.dir/FileNode.cc.o: project/file/CMakeFiles/
 project/file/CMakeFiles/project_file.dir/FileNode.cc.o: ../project/file/FileNode.cc
 project/file/CMakeFiles/project_file.dir/FileNode.cc.o: project/file/CMakeFiles/project_file.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object project/file/CMakeFiles/project_file.dir/FileNode.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/project/file && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT project/file/CMakeFiles/project_file.dir/FileNode.cc.o -MF CMakeFiles/project_file.dir/FileNode.cc.o.d -o CMakeFiles/project_file.dir/FileNode.cc.o -c /home/muxin/hdd/muduo_rewrite/project/file/FileNode.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/project/file && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT project/file/CMakeFiles/project_file.dir/FileNode.cc.o -MF CMakeFiles/project_file.dir/FileNode.cc.o.d -o CMakeFiles/project_file.dir/FileNode.cc.o -c /home/muxin/hdd/muduo_rewrite/project/file/FileNode.cc
 
 project/file/CMakeFiles/project_file.dir/FileNode.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project_file.dir/FileNode.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/project/file && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/project/file/FileNode.cc > CMakeFiles/project_file.dir/FileNode.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/project/file && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/project/file/FileNode.cc > CMakeFiles/project_file.dir/FileNode.cc.i
 
 project/file/CMakeFiles/project_file.dir/FileNode.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project_file.dir/FileNode.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/project/file && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/project/file/FileNode.cc -o CMakeFiles/project_file.dir/FileNode.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/project/file && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/project/file/FileNode.cc -o CMakeFiles/project_file.dir/FileNode.cc.s
+
+project/file/CMakeFiles/project_file.dir/InotifyFileNode.cc.o: project/file/CMakeFiles/project_file.dir/flags.make
+project/file/CMakeFiles/project_file.dir/InotifyFileNode.cc.o: ../project/file/InotifyFileNode.cc
+project/file/CMakeFiles/project_file.dir/InotifyFileNode.cc.o: project/file/CMakeFiles/project_file.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object project/file/CMakeFiles/project_file.dir/InotifyFileNode.cc.o"
+	cd /home/muxin/hdd/muduo_rewrite/build/project/file && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT project/file/CMakeFiles/project_file.dir/InotifyFileNode.cc.o -MF CMakeFiles/project_file.dir/InotifyFileNode.cc.o.d -o CMakeFiles/project_file.dir/InotifyFileNode.cc.o -c /home/muxin/hdd/muduo_rewrite/project/file/InotifyFileNode.cc
+
+project/file/CMakeFiles/project_file.dir/InotifyFileNode.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project_file.dir/InotifyFileNode.cc.i"
+	cd /home/muxin/hdd/muduo_rewrite/build/project/file && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/project/file/InotifyFileNode.cc > CMakeFiles/project_file.dir/InotifyFileNode.cc.i
+
+project/file/CMakeFiles/project_file.dir/InotifyFileNode.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project_file.dir/InotifyFileNode.cc.s"
+	cd /home/muxin/hdd/muduo_rewrite/build/project/file && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/project/file/InotifyFileNode.cc -o CMakeFiles/project_file.dir/InotifyFileNode.cc.s
 
 # Object files for target project_file
 project_file_OBJECTS = \
-"CMakeFiles/project_file.dir/FileNode.cc.o"
+"CMakeFiles/project_file.dir/FileNode.cc.o" \
+"CMakeFiles/project_file.dir/InotifyFileNode.cc.o"
 
 # External object files for target project_file
 project_file_EXTERNAL_OBJECTS =
 
 lib/libproject_file.a: project/file/CMakeFiles/project_file.dir/FileNode.cc.o
+lib/libproject_file.a: project/file/CMakeFiles/project_file.dir/InotifyFileNode.cc.o
 lib/libproject_file.a: project/file/CMakeFiles/project_file.dir/build.make
 lib/libproject_file.a: project/file/CMakeFiles/project_file.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../lib/libproject_file.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library ../../lib/libproject_file.a"
 	cd /home/muxin/hdd/muduo_rewrite/build/project/file && $(CMAKE_COMMAND) -P CMakeFiles/project_file.dir/cmake_clean_target.cmake
 	cd /home/muxin/hdd/muduo_rewrite/build/project/file && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/project_file.dir/link.txt --verbose=$(VERBOSE)
 

@@ -81,6 +81,9 @@ void Server::onCommandMessage(const TcpConnectionPtr& conn,const json& jsonData)
     break;
   case MOVE:
     break;
+  case POST:
+    handlePost(conn,jsonData["content"]);
+    break;
   default:
     LOG_INFO<<"invaild command: "<<command;
     break;
@@ -97,8 +100,6 @@ void Server::onDataMessage(const TcpConnectionPtr& conn, const json& jsonData){
   size_t fileSize = jsonData["size"];
   string content = std::move(base64_decode(jsonData["content"]));
 
-  LOG_INFO<<"content: "<<content;
-
   const std::any& context = conn->getContext();
   assert(context.has_value() && context.type() == typeid(ContextPtr));
   const ContextPtr& contextPtr = any_cast<const ContextPtr&>(context);
@@ -107,7 +108,7 @@ void Server::onDataMessage(const TcpConnectionPtr& conn, const json& jsonData){
 
   receiveContextPtr->write(content.data(),content.size());
 
-  LOG_INFO<<"write bytes "<<content.size();
+  LOG_INFO<<"Receiving file "<<filePath<<" package no "<<receiveContextPtr->getPackNo();
 
   if(receiveContextPtr->isWriteComplete(fileSize)){
 
@@ -244,4 +245,51 @@ void Server::postLocalFile(const TcpConnectionPtr& conn, const File& file){
   }
 }
 
+void Server::handlePost(const TcpConnectionPtr& conn,const json& jsonData)
+{
+  bool isDir = jsonData["isDir"];
+  fs::path filePath = jsonData["path"];
+  fs::path realPath = dirPath_ / filePath;
+  if(isDir){
+    try{
+      fs::create_directory(dirPath_ / filePath);
+      LOG_INFO << "Folder " << (dirPath_ / filePath) << " created successfully";
+      {
+        MutexLockGuard lock(dirMutex_);
+        localDir_->addFile(filePath,true,std::time(nullptr)); 
+      }
+      {
+        MutexLockGuard lock(connMutex_);
+        for(auto &connPtr:connections_){
+          if(connPtr == conn){
+            continue;
+          }
+          struct File file(filePath,isDir);
+          EventLoop::Functor f = std::bind(&Server::postLocalFile, this, connPtr, file);
+          EventLoop* loop =  connPtr->getLoop();
+          loop->queueInLoop(f);
+        }
+      }
+    }
+    catch(const exception& e){
+      LOG_ERROR << "Error creating folder " << (dirPath_ / filePath); 
+    }
+  }
+  else{
+    const std::any& context = conn->getContext();
+    assert(context.has_value() && context.type() == typeid(ContextPtr));
+    const ContextPtr& contextPtr = any_cast<const ContextPtr&>(context);
+
+    fs::path tempFilePath = dirPath_ / fs::path(filePath.string()+".downtemp");
+
+    ReceiveContextPtr receiveContextPtr(new ReceiveContext(tempFilePath));
+    if(receiveContextPtr->isOpen()){
+      contextPtr->receiveContextMap[(dirPath_/filePath).string()] = receiveContextPtr;
+      LOG_INFO << "Receiving file "<<filePath;
+    }
+    else{
+      LOG_ERROR << "Creating "<<filePath<<" error";
+    }
+  }
+}
 

@@ -142,13 +142,8 @@ void FileNode::addFile(const fs::path& filePath,bool isDir,time_t modifyTime)
   auto iter = filePath.begin();
   for(;iter != (--filePath.end());++iter){
     fs::path fileName = *iter;
-    if(fileNodePtr->children_.count(fileName)){
-      fileNodePtr = fileNodePtr->children_[fileName];
-    }
-    else{
-      fileNodePtr->children_[fileName] = NodePtr(new FileNode(true,modifyTime));
-      fileNodePtr = fileNodePtr->children_[fileName];
-    }
+    assert(fileNodePtr->children_.count(fileName));
+    fileNodePtr = fileNodePtr->children_[fileName];
   }
   fs::path fileName = *iter;
   fileNodePtr->children_[fileName] = NodePtr(new FileNode(isDir,modifyTime));

@@ -73,43 +73,43 @@ project/net/CMakeFiles/project_net.dir/Server.cc.o: project/net/CMakeFiles/proje
 project/net/CMakeFiles/project_net.dir/Server.cc.o: ../project/net/Server.cc
 project/net/CMakeFiles/project_net.dir/Server.cc.o: project/net/CMakeFiles/project_net.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object project/net/CMakeFiles/project_net.dir/Server.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/project/net && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT project/net/CMakeFiles/project_net.dir/Server.cc.o -MF CMakeFiles/project_net.dir/Server.cc.o.d -o CMakeFiles/project_net.dir/Server.cc.o -c /home/muxin/hdd/muduo_rewrite/project/net/Server.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/project/net && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT project/net/CMakeFiles/project_net.dir/Server.cc.o -MF CMakeFiles/project_net.dir/Server.cc.o.d -o CMakeFiles/project_net.dir/Server.cc.o -c /home/muxin/hdd/muduo_rewrite/project/net/Server.cc
 
 project/net/CMakeFiles/project_net.dir/Server.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project_net.dir/Server.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/project/net && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/project/net/Server.cc > CMakeFiles/project_net.dir/Server.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/project/net && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/project/net/Server.cc > CMakeFiles/project_net.dir/Server.cc.i
 
 project/net/CMakeFiles/project_net.dir/Server.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project_net.dir/Server.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/project/net && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/project/net/Server.cc -o CMakeFiles/project_net.dir/Server.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/project/net && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/project/net/Server.cc -o CMakeFiles/project_net.dir/Server.cc.s
 
 project/net/CMakeFiles/project_net.dir/Client.cc.o: project/net/CMakeFiles/project_net.dir/flags.make
 project/net/CMakeFiles/project_net.dir/Client.cc.o: ../project/net/Client.cc
 project/net/CMakeFiles/project_net.dir/Client.cc.o: project/net/CMakeFiles/project_net.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object project/net/CMakeFiles/project_net.dir/Client.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/project/net && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT project/net/CMakeFiles/project_net.dir/Client.cc.o -MF CMakeFiles/project_net.dir/Client.cc.o.d -o CMakeFiles/project_net.dir/Client.cc.o -c /home/muxin/hdd/muduo_rewrite/project/net/Client.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/project/net && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT project/net/CMakeFiles/project_net.dir/Client.cc.o -MF CMakeFiles/project_net.dir/Client.cc.o.d -o CMakeFiles/project_net.dir/Client.cc.o -c /home/muxin/hdd/muduo_rewrite/project/net/Client.cc
 
 project/net/CMakeFiles/project_net.dir/Client.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project_net.dir/Client.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/project/net && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/project/net/Client.cc > CMakeFiles/project_net.dir/Client.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/project/net && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/project/net/Client.cc > CMakeFiles/project_net.dir/Client.cc.i
 
 project/net/CMakeFiles/project_net.dir/Client.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project_net.dir/Client.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/project/net && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/project/net/Client.cc -o CMakeFiles/project_net.dir/Client.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/project/net && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/project/net/Client.cc -o CMakeFiles/project_net.dir/Client.cc.s
 
 project/net/CMakeFiles/project_net.dir/Context.cc.o: project/net/CMakeFiles/project_net.dir/flags.make
 project/net/CMakeFiles/project_net.dir/Context.cc.o: ../project/net/Context.cc
 project/net/CMakeFiles/project_net.dir/Context.cc.o: project/net/CMakeFiles/project_net.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muxin/hdd/muduo_rewrite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object project/net/CMakeFiles/project_net.dir/Context.cc.o"
-	cd /home/muxin/hdd/muduo_rewrite/build/project/net && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT project/net/CMakeFiles/project_net.dir/Context.cc.o -MF CMakeFiles/project_net.dir/Context.cc.o.d -o CMakeFiles/project_net.dir/Context.cc.o -c /home/muxin/hdd/muduo_rewrite/project/net/Context.cc
+	cd /home/muxin/hdd/muduo_rewrite/build/project/net && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT project/net/CMakeFiles/project_net.dir/Context.cc.o -MF CMakeFiles/project_net.dir/Context.cc.o.d -o CMakeFiles/project_net.dir/Context.cc.o -c /home/muxin/hdd/muduo_rewrite/project/net/Context.cc
 
 project/net/CMakeFiles/project_net.dir/Context.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project_net.dir/Context.cc.i"
-	cd /home/muxin/hdd/muduo_rewrite/build/project/net && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/project/net/Context.cc > CMakeFiles/project_net.dir/Context.cc.i
+	cd /home/muxin/hdd/muduo_rewrite/build/project/net && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muxin/hdd/muduo_rewrite/project/net/Context.cc > CMakeFiles/project_net.dir/Context.cc.i
 
 project/net/CMakeFiles/project_net.dir/Context.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project_net.dir/Context.cc.s"
-	cd /home/muxin/hdd/muduo_rewrite/build/project/net && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/project/net/Context.cc -o CMakeFiles/project_net.dir/Context.cc.s
+	cd /home/muxin/hdd/muduo_rewrite/build/project/net && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muxin/hdd/muduo_rewrite/project/net/Context.cc -o CMakeFiles/project_net.dir/Context.cc.s
 
 # Object files for target project_net
 project_net_OBJECTS = \

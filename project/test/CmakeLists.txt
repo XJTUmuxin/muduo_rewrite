@@ -7,6 +7,9 @@ target_link_libraries(server_test project_net muduo_net)
 add_executable(FileNode_test FileNode_test.cc)
 target_link_libraries(FileNode_test project_file)
 
+# add_executable(InotifyFileNode_test InotifyFileNode_test.cc)
+# target_link_libraries(InotifyFileNode_test project_file)
+
 add_executable(serial_test serial_test.cc)
 target_link_libraries(serial_test project_file)
 
