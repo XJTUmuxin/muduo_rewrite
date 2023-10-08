@@ -6,7 +6,7 @@
 #include "muduo/net/Endian.h"
 #include "muduo/net/TcpConnection.h"
 
-#define MAX_LEN  128*1024
+#define MAX_LEN  2048*1024
 
 class LengthHeaderCodec : muduo::noncopyable
 {
