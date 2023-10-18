@@ -36,6 +36,13 @@
 
 
 命令设计：
+1) requestInit: 客户端请求初始化
+
+    content为客户端对应的deviceId
+
+2) InitEnd: 服务器端为客户端初始化结束
+
+  如果客户端是第一次进行初始化，那么content是服务器为客户端分配的deviceId
 
 1) requestSyn：表示一方向另一方请求同步
     
@@ -55,15 +62,17 @@
     ```
 2) delete：表示一方要求另一方删除文件或子文件夹
     
-    content格式为
-    ```json
-    {
-      ""
-    }
-    ```
+    content为要删除的路径
     
 3) move：表示一方要求另一方移动文件或子文件夹
 
+  content格式为
+  ```json
+  {
+    "source":sourceFilePath,
+    "target":targetFilePath
+  }
+  ```
 
 4) get: 表示一方向另一方请求文件
   
@@ -81,6 +90,7 @@
   }
 
 
+
 #### 数据消息
 
 数据消息对应的json结构为:
@@ -94,4 +104,45 @@
 
 ### 客户端文件夹监听
 
-使用inotify机制来监听文件夹下所有文件
+使用inotify机制来监听文件夹下所有目录
+
+在客户端初始化时，递归遍历根目录，将所有子目录添加到监听中
+
+1) CREATE 事件
+
+  当发生create事件时，在客户端程序中维护的目录树中增添新节点
+
+  如果新增为目录，则直接向服务器端post，如果是文件，则延迟post，等文件close_write，再进行post
+
+2) CLOSE_WRITE 事件
+
+  当文件发生CLOSE_WRITE事件时，说明文件经过修改并且已经关闭，此时，我们并不立刻进行post，而是将文件添加到
+  一个集合中，只有当一个文件的最后修改时间早于当前时间五秒，才进行post，这样做的目的是防止文件在一小段时间内
+  频繁进行CLOSE_WRITE，导致客户端频繁进行POST
+
+3) DELETE 事件
+
+  当发生DELETE事件时，客户端在维护的目录树中删除对应节点
+
+  并向服务器发送DELETE命令，通知服务器进行删除操作
+
+4) MOVE_FROM和MOVE_TO 事件
+
+   MOVE_FROM和MOVE_TO的发生一共可能对应三种情况
+
+    一. 将监控区内一个文件移动到监控区内另一个位置
+  
+    这种情况下会产生成对的MOVE_FROM和MOVE_TO事件
+
+    二. 将监控区内一个文件移动到监控区外的一个位置
+
+    这种情况下在监控区内只会监听到MOVE_FROM事件
+
+    三. 将监控区外的一个文件移动到监控区内的一个位置
+
+    这种情况下在监控区内只会监听到MOVE_TO事件
+
+  linux内核并不能保证MOVE_TO事件一定紧跟着MOVE_FROM事件并且在一次对inotifyFd的读取中能把两个事件都读取到，但可以保证的是成对的MOVE事件，MOVE_TO发生在MOVE_FROM之后，同时，inotify机制为MOVE事件提供了cookie值，成对的MOVE事件具有相同的cookie值
+
+  因此，我们的处理思路是，监听到MOVE_FROM事件后，将事件存储起来；监听到MOVE_TO事件后，查找之前存储的MOVE_FROM事件，寻找与自己有相同cookie值的MOVE_FROM事件，如果不存在，则说明对应情况三，否则，则说明对应情况一。关于情况二，我们的处理方法是，对存储起来的MOVE_FROM事件添加超时机制，当MOVE_FROM事件经过一段时间还没有等待到对应的MOVE_TO事件，则认为对应情况二，清除掉对应的MOVE_FROM事件
+

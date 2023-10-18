@@ -313,4 +313,11 @@ project/test/CMakeFiles/serial_test.dir/serial_test.cc.o: \
  /usr/local/include/nlohmann/detail/conversions/to_chars.hpp \
  /usr/local/include/nlohmann/ordered_map.hpp /usr/include/c++/11/any \
  /usr/local/include/nlohmann/detail/macro_unscope.hpp \
- /usr/local/include/nlohmann/thirdparty/hedley/hedley_undef.hpp
+ /usr/local/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
+ /home/muxin/hdd/muduo_rewrite/muduo/base/Logging.h \
+ /home/muxin/hdd/muduo_rewrite/muduo/base/LogStream.h \
+ /home/muxin/hdd/muduo_rewrite/muduo/base/noncopyable.h \
+ /home/muxin/hdd/muduo_rewrite/muduo/base/StringPiece.h \
+ /home/muxin/hdd/muduo_rewrite/muduo/base/Types.h \
+ /home/muxin/hdd/muduo_rewrite/muduo/base/Timestamp.h \
+ /home/muxin/hdd/muduo_rewrite/muduo/base/copyable.h

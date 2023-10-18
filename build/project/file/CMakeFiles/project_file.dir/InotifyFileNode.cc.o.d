@@ -224,6 +224,7 @@ project/file/CMakeFiles/project_file.dir/InotifyFileNode.cc.o: \
  /usr/include/c++/11/bits/uses_allocator_args.h \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h /usr/include/c++/11/iostream \
+ /home/muxin/hdd/muduo_rewrite/project/file/FileNode.h \
  /usr/local/include/nlohmann/json.hpp /usr/include/c++/11/algorithm \
  /usr/include/c++/11/bits/ranges_algo.h \
  /usr/include/c++/11/bits/ranges_util.h \

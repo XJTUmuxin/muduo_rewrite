@@ -18,9 +18,8 @@ void TraverseDirectory(const fs::path& directoryPath, int depth = 0) {
 }
 
 int main() {
-    fs::path shortPath("公式15.jpg");
+    fs::path shortPath("/muxin/build");
+    shortPath.replace_filename(fs::path("build_new"));
     std::cout<<shortPath<<std::endl;
-    auto iter = shortPath.begin();
-    std::cout << *iter << std::endl;
     return 0;
 }

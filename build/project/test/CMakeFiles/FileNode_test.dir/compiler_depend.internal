@@ -388,4 +388,11 @@ project/test/CMakeFiles/FileNode_test.dir/FileNode_test.cc.o
  /usr/include/c++/11/any
  /usr/local/include/nlohmann/detail/macro_unscope.hpp
  /usr/local/include/nlohmann/thirdparty/hedley/hedley_undef.hpp
+ /home/muxin/hdd/muduo_rewrite/muduo/base/Logging.h
+ /home/muxin/hdd/muduo_rewrite/muduo/base/LogStream.h
+ /home/muxin/hdd/muduo_rewrite/muduo/base/noncopyable.h
+ /home/muxin/hdd/muduo_rewrite/muduo/base/StringPiece.h
+ /home/muxin/hdd/muduo_rewrite/muduo/base/Types.h
+ /home/muxin/hdd/muduo_rewrite/muduo/base/Timestamp.h
+ /home/muxin/hdd/muduo_rewrite/muduo/base/copyable.h
 

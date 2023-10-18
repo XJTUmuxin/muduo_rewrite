@@ -1,7 +1,9 @@
 #include "project/net/Client.h"
 #include "muduo/base/Timestamp.h"
 #include <cassert>
+#include <vector>
 #define EVENTS_BUF_SIZE 4096
+#define CONFIG_FILE_PATH ".syn_config.json"
 using namespace std;
 using namespace project;
 using namespace project::file;
@@ -16,7 +18,8 @@ Client::Client(EventLoop* loop,const InetAddress& serverAddr,const fs::path& dir
     dirPath_(dirPath),
     inotifyFd_(inotify_init1(IN_NONBLOCK)),
     fileWatchChannel_(new Channel(client_.getLoop(),inotifyFd_)),
-    postingNum_(0)
+    postingNum_(0),
+    deviceId_(0)
 {
   InotifyFileNode::setInotifyFd(inotifyFd_);
   
@@ -36,7 +39,27 @@ Client::Client(EventLoop* loop,const InetAddress& serverAddr,const fs::path& dir
 
   fileWatchChannel_->enableReading();
 
-  closeWriteFilesTransferTimer =  client_.getLoop()->runEvery(5.0,std::bind(&Client::transferCloseWriteFiles,this));
+  closeWriteFilesTransferTimer_ =  client_.getLoop()->runEvery(5.0,std::bind(&Client::transferCloseWriteFiles,this));
+
+  clearTimeoutMovefromEventTimer_ = client_.getLoop()->runEvery(5.0,std::bind(&Client::clearTimeoutMovefromEvents,this));
+
+  fs::path configFilePath = dirPath / fs::path(CONFIG_FILE_PATH);
+
+  if(fs::exists(configFilePath)){
+    std::ifstream configFile(configFilePath);
+    if(!configFile.is_open()){
+      LOG_ERROR << "Can't open the config file";
+    }
+    else{
+      json jsonData;
+      configFile >> jsonData;
+      if(jsonData.contains("deviceId")){
+        deviceId_ = jsonData["deviceId"];
+        LOG_INFO << "Device Id: "<<deviceId_;
+      }
+      configFile.close();
+    }
+  }
 
 }
 
@@ -54,8 +77,6 @@ void Client::fileWatchHandle(Timestamp receiveTime)
       return;
   }
 
-  LOG_INFO << "Inotify event happened";
-
   for (offset = 0; offset < nbytes; ) {
     event = (struct inotify_event *)&events[offset]; 
 
@@ -70,9 +91,9 @@ void Client::fileWatchHandle(Timestamp receiveTime)
     if (mask & IN_ATTRIB)        operate = "ATTRIB";
     if (mask & IN_CLOSE_WRITE)   
     {
-      operate = "CLOSE_WRITE";  
-      LOG_INFO <<operate<<" "<<event->name;
-      LOG_INFO <<nodePtr->getFilePath()<<" "<<event->name<<": "<<operate <<" ";
+      // operate = "CLOSE_WRITE";  
+      // LOG_INFO <<operate<<" "<<event->name;
+      // LOG_INFO <<nodePtr->getFilePath()<<" "<<event->name<<": "<<operate <<" ";
       fileWatchHandleCloseWrite(event,nodePtr);
     }
     if (mask & IN_CLOSE_NOWRITE) operate = "CLOSE_NOWRITE";
@@ -80,20 +101,36 @@ void Client::fileWatchHandle(Timestamp receiveTime)
     {  
       operate = "CREATE" ;
       LOG_INFO<<operate<<" "<<event->name;
-      LOG_INFO<<nodePtr->getFilePath() <<" "<<event->name<<": "<<operate <<" " ;
+      // LOG_INFO<<nodePtr->getFilePath() <<" "<<event->name<<": "<<operate <<" " ;
       fileWatchHandleCreate(event,nodePtr);
     }
     if (mask & IN_DELETE_SELF)   operate = "DELETE_SELF";
     if (mask & IN_MODIFY)        operate = "MODIFY";
     if (mask & IN_MOVE_SELF)     operate = "MOVE_SELF";
-    if (mask & IN_MOVED_FROM)    operate = "MOVED_FROM";
-    if (mask & IN_MOVED_TO)      operate = "MOVED_TO";
+    if (mask & IN_MOVED_FROM)
+    {
+      // operate = "MOVED_FROM";
+      // LOG_INFO<<operate<<" "<<event->name;
+      // LOG_INFO<<nodePtr->getFilePath() <<" "<<event->name<<": "<<operate <<" " ;
+      fileWatchHandleMovefrom(event,nodePtr);
+    }
+    if (mask & IN_MOVED_TO)
+    {
+      // operate = "MOVED_TO";
+      // LOG_INFO<<operate<<" "<<event->name;
+      // LOG_INFO<<nodePtr->getFilePath() <<" "<<event->name<<": "<<operate <<" " ;
+      fileWatchHandleMoveto(event,nodePtr);
+    }
     if (mask & IN_OPEN)          operate = "OPEN";
     if (mask & IN_IGNORED)       operate = "IGNORED";
-    if (mask & IN_DELETE)        operate = "DELETE";
+    if (mask & IN_DELETE)    
+    {
+      // operate = "DELETE";
+      // LOG_INFO<<operate<<" "<<event->name;
+      // LOG_INFO<<nodePtr->getFilePath() <<" "<<event->name<<": "<<operate <<" " ;
+      fileWatchHandleDelete(event,nodePtr);
+    }   
     if (mask & IN_UNMOUNT)       operate = "UNMOUNT";
-
-    // LOG_INFO<<operate<<" "<<event->name;
 
     offset += sizeof(struct inotify_event) + event->len; 
   }
@@ -104,11 +141,16 @@ void Client::fileWatchHandleCreate(const struct inotify_event * event,const shar
 {
   fs::path createFilePath = nodePtr->getFilePath() / fs::path(event->name);
   
-  if(filteredFiles_.count(createFilePath)){
+  fs::path fileName = fs::path(event->name);
+
+  if(filteredFiles_.count(createFilePath) || event->name[0] == '.' ||
+   fileName.extension() == ".downtemp"){
     return;
   }
 
-  fs::path shortPath = fs::relative(createFilePath,dirPath_);
+  LOG_INFO<< "Create new file "<<createFilePath;
+
+  fs::path shortPath = createFilePath.lexically_relative(dirPath_);
   bool isDir = fs::is_directory(createFilePath);
   struct File file(shortPath,isDir);
   localDir_->addFile(dirPath_,shortPath,isDir,std::time(nullptr));
@@ -121,43 +163,201 @@ void Client::fileWatchHandleCreate(const struct inotify_event * event,const shar
 
 void Client::fileWatchHandleCloseWrite(const struct inotify_event * event,const shared_ptr<InotifyFileNode>& nodePtr)
 {
-  fs::path createFilePath = nodePtr->getFilePath() / fs::path(event->name);
+  fs::path updateFilePath = nodePtr->getFilePath() / fs::path(event->name);
   
-  if(filteredFiles_.count(createFilePath)){
+  fs::path fileName = fs::path(event->name);
+
+  if(filteredFiles_.count(updateFilePath) || event->name[0] == '.' ||
+  fileName.extension() == ".downtemp"){
     return;
   }
 
-  fs::path shortPath = fs::relative(createFilePath,dirPath_);
-  bool isDir = fs::is_directory(createFilePath);
-  struct File file(shortPath,isDir);
-  assert(!isDir);
-  // when the file close_write, we add the file to the close wirte files set
-  closeWriteFiles_.insert(shortPath);
-  //postLocalFile(connection_,file);
+  LOG_INFO<< "Close Write file "<<updateFilePath;
+
+  fs::path shortPath = updateFilePath.lexically_relative(dirPath_);
+  try
+  {
+    bool isDir = fs::is_directory(updateFilePath);
+    
+    auto lastWriteTime = fs::last_write_time(updateFilePath);
+    time_t modifyTime = std::chrono::system_clock::to_time_t(std::chrono::file_clock::to_sys(lastWriteTime));
+
+    localDir_->addFile(dirPath_,shortPath,isDir,modifyTime);
+
+    assert(!isDir);
+    // when the file close_write, we add the file to the close wirte files set
+    closeWriteFiles_.insert(shortPath);
+    //postLocalFile(connection_,file);
+  }
+  catch(const std::exception& e)
+  {
+    LOG_ERROR<<"Close Write file insert error " << e.what();
+  }
+  
+
+}
+
+void Client::fileWatchHandleDelete(const struct inotify_event * event,const shared_ptr<InotifyFileNode>& nodePtr)
+{
+  fs::path deleteFilePath = nodePtr->getFilePath() / fs::path(event->name);
+  
+  fs::path fileName = fs::path(event->name);
+
+  if(filteredFiles_.count(deleteFilePath) || event->name[0] == '.' ||
+   fileName.extension() == ".downtemp"){
+    return;
+  }
+
+  LOG_INFO<< "Delete file "<<deleteFilePath;
+
+  fs::path shortPath = deleteFilePath.lexically_relative(dirPath_);
+  localDir_->deleteFile(shortPath);
+
+  json jsonData;
+  jsonData["type"] = "command";
+  jsonData["command"] = DELETE;
+  jsonData["content"] = shortPath;
+
+  string message = jsonData.dump();
+
+  if(connection_){
+    codec_.send(get_pointer(connection_),message);
+  }
+}
+
+void Client::fileWatchHandleMovefrom(const struct inotify_event * event,const shared_ptr<InotifyFileNode>& nodePtr)
+{
+  fs::path movefromFilePath = nodePtr->getFilePath() / fs::path(event->name);
+  
+  fs::path fileName = fs::path(event->name);
+
+  if(filteredFiles_.count(movefromFilePath) || event->name[0] == '.' ||
+   fileName.extension() == ".downtemp"){
+    return;
+  }
+
+  LOG_INFO<<"Move from file "<<movefromFilePath;
+  time_t movefromTime = time(nullptr);
+  movefromEvents_.emplace_back(nodePtr,movefromTime,event->cookie,fs::path(event->name));
+}
+
+void Client::fileWatchHandleMoveto(const struct inotify_event * event,const shared_ptr<InotifyFileNode>& nodePtr)
+{
+  fs::path movetoFilePath = nodePtr->getFilePath() / fs::path(event->name);
+  
+  fs::path newFileName = fs::path(event->name);
+
+  if(filteredFiles_.count(movetoFilePath) || event->name[0] == '.' ||
+   newFileName.extension() == ".downtemp"){
+    return;
+  }
+
+  LOG_INFO<<"Move to file "<<movetoFilePath;
+
+  auto it = movefromEvents_.begin();
+  while(it != movefromEvents_.end())
+  {
+    if(it->cookie_ == event->cookie){
+      // find the move_from event paired with move_to events
+      auto sourceParentNode = it->parentNode_;
+      auto oldFileName = it->fileName_;
+      movefromEvents_.erase(it);
+      
+      // change the node of localDir_
+      // LOG_INFO<< "oldFileName: "<<oldFileName<<" newFileName: "<<newFileName;
+
+      sourceParentNode->moveTo(oldFileName,nodePtr,newFileName);
+
+      //send the command
+      json jsonData;
+      jsonData["type"] = "command";
+      jsonData["command"] = MOVE;
+      fs::path movefromFilePath = sourceParentNode->getFilePath() / oldFileName;
+      fs::path sourcePath = movefromFilePath.lexically_relative(dirPath_);
+      jsonData["content"]["source"] = sourcePath;
+      fs::path targetPath = movetoFilePath.lexically_relative(dirPath_);
+      jsonData["content"]["target"] = targetPath;
+
+      string message = jsonData.dump();
+
+      if(connection_){
+        codec_.send(get_pointer(connection_),message);
+      }
+
+      return;
+    }
+  }
+
+  // not find the move_from event paired with move_to events
+  auto newFileNode = std::shared_ptr<InotifyFileNode>(new InotifyFileNode(nodePtr->getFilePath() / newFileName)); 
+  nodePtr->addNode(newFileName,newFileNode);
+  std::vector<File> files;
+  fs::path targetPath = movetoFilePath.lexically_relative(dirPath_);
+  newFileNode->getAllFile(files,targetPath);
+  for(auto &file:files){
+    postLocalFile(connection_,file);
+  }
 }
 
 void Client::transferCloseWriteFiles()
 {
   // LOG_INFO << "Posting num "<< postingNum_;
   if(connection_ && postingNum_==0){
-    LOG_INFO << "Close write file transfer Timer trigger";
     vector<fs::path> deletePaths;
     for(auto &path:closeWriteFiles_){
-      fs::path realPath = dirPath_ / path;
-      auto lastWriteTime = fs::last_write_time(realPath);
-      time_t modifyTime = std::chrono::system_clock::to_time_t(std::chrono::file_clock::to_sys(lastWriteTime));
-      time_t currentTime = time(nullptr);
-      time_t diffTime = currentTime - modifyTime;
-      if(diffTime > 5){
-        // last modify time was more tahn five seconds ago
-        struct File file(path,false);
-        localDir_->addFile(dirPath_,path,false,modifyTime);
-        postLocalFile(connection_,file);
-        deletePaths.push_back(path);
+      try
+      {
+        fs::path realPath = dirPath_ / path;
+        auto lastWriteTime = fs::last_write_time(realPath);
+        time_t modifyTime = std::chrono::system_clock::to_time_t(std::chrono::file_clock::to_sys(lastWriteTime));
+        time_t currentTime = time(nullptr);
+        time_t diffTime = currentTime - modifyTime;
+        if(diffTime > 5){
+          // last modify time was more tahn five seconds ago
+          struct File file(path,false);
+          localDir_->addFile(dirPath_,path,false,modifyTime);
+          postLocalFile(connection_,file);
+          deletePaths.push_back(path);
+        }
       }
+      catch(const std::exception& e)
+      {
+        deletePaths.push_back(path);
+        LOG_ERROR<<"Transfer close write file "<<path<<"error " << e.what() << '\n';
+      }
+      
     }
     for(auto &path:deletePaths){
       closeWriteFiles_.erase(path);
+    }
+  }
+}
+
+void Client::clearTimeoutMovefromEvents()
+{
+  auto it = movefromEvents_.begin();
+  while(it != movefromEvents_.end())
+  {
+    time_t timeNow = time(nullptr);
+    if(timeNow - it->moveTime_ > 5)
+    {
+      // MOVE_FROM event timeout
+      auto parentNode = it->parentNode_;
+      parentNode->eraseChild(it->fileName_);
+      json jsonData;
+      jsonData["type"] = "command";
+      jsonData["command"] = DELETE;
+      jsonData["content"] = (parentNode->getFilePath() / it->fileName_).lexically_relative(dirPath_);
+
+      string message = jsonData.dump();
+
+      if(connection_){
+        codec_.send(get_pointer(connection_),message);
+      }
+      it = movefromEvents_.erase(it);
+    }
+    else{
+      it++;
     }
   }
 }
@@ -176,23 +376,24 @@ void Client::onConnection(const TcpConnectionPtr& conn)
 
       connection_->setContext(ContextPtr(new Context()));
 
-      json jsonData;
-      jsonData["type"] = "command";
-      jsonData["command"] = REQUESTSYN;
-      {
-        MutexLockGuard lock2(dirMutex_);
-        jsonData["content"] = localDir_->serialize();
-      }
-      string message = jsonData.dump();
-
-      codec_.send(get_pointer(connection_),message);
+      requestInit(connection_);
     }
     else
     {
       connection_.reset();
     }
   }
+}
 
+void Client::requestInit(const TcpConnectionPtr& conn){
+  json jsonData;
+  jsonData["type"] = "command";
+  jsonData["command"] = REQUESTINIT;
+  jsonData["content"] = deviceId_;
+
+  string message = jsonData.dump();
+
+  codec_.send(get_pointer(conn),message);
 }
 
 void Client::onStringMessage(const TcpConnectionPtr& conn,
@@ -209,7 +410,7 @@ void Client::onStringMessage(const TcpConnectionPtr& conn,
 
 void Client::onWriteComplete(const TcpConnectionPtr& conn)
 {
-  LOG_INFO << "On write complete";
+  // LOG_INFO << "On write complete";
   if(continueTransferFile(conn,codec_)==0){
     postingNum_--;
     // LOG_INFO<<"postingNum--";
@@ -224,12 +425,24 @@ void Client::onDataMessage(const TcpConnectionPtr& conn, const json& jsonData){
   const std::any& context = conn->getContext();
   assert(context.has_value() && context.type() == typeid(ContextPtr));
   const ContextPtr& contextPtr = any_cast<const ContextPtr&>(context);
+
+  if(contextPtr->receiveContextMap.count(dirPath_ / filePath) == 0){
+    return;
+  }
   
   ReceiveContextPtr& receiveContextPtr = contextPtr->receiveContextMap[dirPath_/filePath];
   
-  receiveContextPtr->write(content.data(),content.size());
+  try
+  {
+    receiveContextPtr->write(content.data(),content.size());
+  }
+  catch(const std::exception& e)
+  {
+    contextPtr->receiveContextMap.erase(dirPath_ / filePath);
+    LOG_ERROR<<"Download file "<<filePath<<" error " << e.what();
+  }
   
-  LOG_INFO<<"Receiving file "<<filePath<<" package no "<<receiveContextPtr->getPackNo();
+  // LOG_INFO<<"Receiving file "<<filePath<<" package no "<<receiveContextPtr->getPackNo();
   
   if(receiveContextPtr->isWriteComplete(fileSize)){
 
@@ -243,24 +456,23 @@ void Client::onDataMessage(const TcpConnectionPtr& conn, const json& jsonData){
     std::chrono::system_clock::time_point sysTimePoint = std::chrono::system_clock::from_time_t(modifyTime);
     std::chrono::time_point<std::chrono::file_clock> fileTimePoint = std::chrono::file_clock::from_sys(sysTimePoint);
 
-    fs::last_write_time(tempFilePath,fileTimePoint);
-
-    if(fs::exists(realFilePath)){
-      fs::remove(realFilePath);
+    try
+    {
+      fs::last_write_time(tempFilePath,fileTimePoint);
+      if(fs::exists(realFilePath)){
+        fs::remove(realFilePath);
+      }
+      fs::rename(tempFilePath,realFilePath);
+      LOG_INFO << "Received file "<<filePath<<" successfully";
     }
-
-    fs::rename(tempFilePath,realFilePath);
+    catch(const std::exception& e)
+    {
+      LOG_ERROR<<"Download file "<<filePath<<" error " << e.what();
+    }
 
     fileWatchHandle(Timestamp::now()); // clear the event of tempFilePath and realFilePath 
 
-    filteredFiles_.erase(tempFilePath);
     filteredFiles_.erase(realFilePath);
-
-    LOG_INFO << "Received file "<<filePath<<" successfully";
-    {
-      MutexLockGuard lock(dirMutex_);
-      localDir_->addFile(dirPath_,filePath,false,modifyTime);
-    }
   }
 }
 
@@ -268,6 +480,9 @@ void Client::onCommandMessage(const TcpConnectionPtr& conn,const json& jsonData)
   int command = jsonData["command"];
   switch (command)
   {
+  case INITEND:
+    handleInitEnd(conn,jsonData["content"]);
+    break;
   case GET:
     handleGet(conn,jsonData["content"]);
     break;
@@ -275,8 +490,10 @@ void Client::onCommandMessage(const TcpConnectionPtr& conn,const json& jsonData)
     handlePost(conn,jsonData["content"]);
     break;
   case DELETE:
+    handleDelete(conn,jsonData["content"]);
     break;
   case MOVE:
+    handleMove(conn,jsonData["content"]);
     break;
   default:
     LOG_INFO<<"invaild command: "<<command;
@@ -284,14 +501,38 @@ void Client::onCommandMessage(const TcpConnectionPtr& conn,const json& jsonData)
   }
 }
 
+void Client::handleInitEnd(const TcpConnectionPtr& conn, const json& jsonData)
+{
+  int deviceId= jsonData;
+
+  if(deviceId_>0){
+    assert(deviceId == deviceId_);
+  }
+  else{
+    deviceId_ = deviceId;
+    fs::path configFilePath = dirPath_ / fs::path(CONFIG_FILE_PATH);
+    json config;
+    if(fs::exists(configFilePath)){
+      ifstream configFileIfs(configFilePath);
+      configFileIfs >> config;
+      configFileIfs.close();
+    }
+    config["deviceId"] = deviceId_;
+    ofstream configFileOfs(configFilePath);
+    configFileOfs << config;
+    configFileOfs.close();
+  }
+  requestSyn(conn);
+}
+
 void Client::handleGet(const TcpConnectionPtr& conn, const json& jsonData)
 {
   fs::path filePath = jsonData["path"];
   LOG_INFO << "Remote Get file " << filePath;
-  if(transferFile(conn,dirPath_,filePath,codec_)==1){
-    postingNum_++;
-    // LOG_INFO<<"Posting num ++1";
-  }
+  fs::path realPath = dirPath_ / filePath;
+  bool isDir = fs::is_directory(realPath);
+  File file(filePath,isDir);
+  postLocalFile(conn,file);
 }
 
 void Client::handlePost(const TcpConnectionPtr& conn,const json& jsonData)
@@ -299,6 +540,7 @@ void Client::handlePost(const TcpConnectionPtr& conn,const json& jsonData)
   bool isDir = jsonData["isDir"];
   fs::path filePath = jsonData["path"];
   fs::path realPath = dirPath_ / filePath;
+  time_t modifyTime = jsonData["mTime"];
   filteredFiles_.insert(realPath);
   if(isDir){
     try{
@@ -306,7 +548,7 @@ void Client::handlePost(const TcpConnectionPtr& conn,const json& jsonData)
       LOG_INFO << "Folder " << (dirPath_ / filePath) << " created successfully";
       {
         MutexLockGuard lock(dirMutex_);
-        localDir_->addFile(dirPath_,filePath,true,std::time(nullptr));
+        localDir_->addFile(dirPath_,filePath,true,modifyTime);
       }
     }
     catch(const exception& e){
@@ -316,12 +558,15 @@ void Client::handlePost(const TcpConnectionPtr& conn,const json& jsonData)
     filteredFiles_.erase(realPath);
   }
   else{
+    {
+      MutexLockGuard lock(dirMutex_);
+      localDir_->addFile(dirPath_,filePath,false,modifyTime);
+    }
     const std::any& context = conn->getContext();
     assert(context.has_value() && context.type() == typeid(ContextPtr));
     const ContextPtr& contextPtr = any_cast<const ContextPtr&>(context);
 
     fs::path tempFilePath = dirPath_ / fs::path(filePath.string()+".downtemp");
-    filteredFiles_.insert(tempFilePath);
 
     ReceiveContextPtr receiveContextPtr(new ReceiveContext(tempFilePath));
     if(receiveContextPtr->isOpen()){
@@ -334,12 +579,73 @@ void Client::handlePost(const TcpConnectionPtr& conn,const json& jsonData)
   }
 }
 
+void Client::handleDelete(const TcpConnectionPtr& conn,const json& jsonData){
+  fs::path filePath = jsonData;
+  LOG_INFO << "Inotify delete file "<<filePath;
+  filteredFiles_.insert(dirPath_ / filePath);
+  try
+  {
+    localDir_->deleteFile(filePath);
+    fs::remove_all(dirPath_ / filePath);
+    LOG_INFO << "Delete file "<<filePath<<" successful";
+  }
+  catch(const std::exception& e)
+  {
+    LOG_ERROR << "Delete file "<<filePath<<" error "<<e.what();
+  }
+  fileWatchHandle(Timestamp::now());  // clear the event of realPath
+  filteredFiles_.erase(dirPath_ / filePath);
+}
+
+void Client::handleMove(const TcpConnectionPtr& conn,const json& jsonData)
+{
+  fs::path sourcePath = jsonData["source"];
+  fs::path targetPath = jsonData["target"];
+  LOG_INFO << "Inotify move file "<<sourcePath<<" to "<<targetPath;
+  filteredFiles_.insert(dirPath_ / sourcePath);
+  filteredFiles_.insert(dirPath_ / targetPath);
+  try
+  {
+    fs::rename(dirPath_ / sourcePath, dirPath_ / targetPath);
+    auto sourceNode = localDir_->getParentNode(sourcePath);
+    auto targetNode = localDir_->getParentNode(targetPath);
+    fs::path oldFileName = sourcePath.filename();
+    fs::path newFileName = targetPath.filename();
+    sourceNode->moveTo(oldFileName,targetNode,newFileName);
+    LOG_INFO << "Move file "<<sourcePath<<" to "<<targetPath<<" successful";
+  }
+  catch(const std::exception& e)
+  {
+    LOG_ERROR <<"Move file "<<sourcePath<<" to "<<targetPath<<" error "<<e.what();
+  }
+  fileWatchHandle(Timestamp::now()); // clear the event of sourcePath and targetPath
+  filteredFiles_.erase(dirPath_ / sourcePath);
+  filteredFiles_.erase(dirPath_ / sourcePath);
+}
+
+void Client::requestSyn(const TcpConnectionPtr& conn){
+    json jsonData;
+    jsonData["type"] = "command";
+    jsonData["command"] = REQUESTSYN;
+    {
+      MutexLockGuard lock2(dirMutex_);
+      jsonData["content"] = localDir_->serialize();
+    }
+    string message = jsonData.dump();
+
+    codec_.send(get_pointer(connection_),message);
+}
+
 void Client::postLocalFile(const TcpConnectionPtr& conn, const File& file){
   json jsonData;
   jsonData["type"] = "command";
   jsonData["command"] = POST;
   jsonData["content"]["path"] = file.filePath.string();
   jsonData["content"]["isDir"] = file.isDir;
+  fs::path realPath = dirPath_ / file.filePath;
+  auto lastWriteTime = fs::last_write_time(realPath);
+  time_t modifyTime = std::chrono::system_clock::to_time_t(std::chrono::file_clock::to_sys(lastWriteTime));
+  jsonData["content"]["mTime"] = modifyTime;
   string message = jsonData.dump();
   if(conn){
     codec_.send(get_pointer(conn),message);

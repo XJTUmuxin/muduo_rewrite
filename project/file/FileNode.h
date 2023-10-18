@@ -8,6 +8,7 @@
 #include<string>
 #include<iostream>
 #include<nlohmann/json.hpp>
+#include"muduo/base/Logging.h"
 
 namespace project{
 namespace file{
@@ -17,6 +18,14 @@ using json = nlohmann::json;
 
 struct File
 {
+  // File(const fs::path& file_path,bool is_dir,time_t mTime)
+  //   : filePath(file_path),
+  //     isDir(is_dir),
+  //     modifyTime(mTime)
+  // {
+
+  // }
+
   File(const fs::path& file_path,bool is_dir)
     : filePath(file_path),
       isDir(is_dir)
@@ -25,6 +34,7 @@ struct File
   }
   fs::path filePath;
   bool isDir;
+  // time_t modifyTime;
 };
 
 typedef std::vector<File> DiffSet; 
@@ -36,26 +46,22 @@ struct DiffSets
   DiffSet newSet;
   DiffSet oldSet;
   void printDiffSets(){
-    std::cout<<remoteAddSet.size()<<" remote add files:"<<std::endl;
+    LOG_INFO<<remoteAddSet.size()<<" remote add files:";
     for(auto &addFile:remoteAddSet){
-      std::cout<<addFile.filePath<<" type: "<<(addFile.isDir ? "Dir":"File")<<std::endl;
+      LOG_INFO<<addFile.filePath<<" type: "<<(addFile.isDir ? "Dir":"File");
     }
-    std::cout<<std::endl;
-    std::cout<<localAddSet.size()<<" local add files:"<<std::endl;
+    LOG_INFO<<localAddSet.size()<<" local add files:";
     for(auto &deleteFile:localAddSet){
-      std::cout<<deleteFile.filePath<<" type: "<<(deleteFile.isDir ? "Dir":"File")<<std::endl;
+      LOG_INFO<<deleteFile.filePath<<" type: "<<(deleteFile.isDir ? "Dir":"File");
     }
-    std::cout<<std::endl;
-    std::cout<<newSet.size()<<" new files:"<<std::endl;
+    LOG_INFO<<newSet.size()<<" new files:";
     for(auto &newFile:newSet){
-      std::cout<<newFile.filePath<<" type: "<<(newFile.isDir ? "Dir":"File")<<std::endl;
+      LOG_INFO<<newFile.filePath<<" type: "<<(newFile.isDir ? "Dir":"File");
     }
-    std::cout<<std::endl;
-    std::cout<<oldSet.size()<<" old files:"<<std::endl;
+    LOG_INFO<<oldSet.size()<<" old files:";
     for(auto &oldFile:oldSet){
-      std::cout<<oldFile.filePath<<" type: "<<(oldFile.isDir ? "Dir":"File")<<std::endl;
+      LOG_INFO<<oldFile.filePath<<" type: "<<(oldFile.isDir ? "Dir":"File");
     }
-    std::cout<<std::endl;
   }
 };
 
@@ -78,11 +84,14 @@ public:
 
   json serialize();
 
+  std::shared_ptr<FileNode> getParentNode(const fs::path& filePath);
+
   void addFile(const fs::path& filePath,bool isDir,time_t modifyTime);
 
-  void deleteFile();
+  void deleteFile(const fs::path& filePath);
 
-  void moveFile();
+  void moveTo(const fs::path& oldFileName,const std::shared_ptr<FileNode>& targetParentNode,
+  const fs::path& newFileName);
 
   void print(); // for Debug
 private:

@@ -91,10 +91,10 @@ public:
       writeBytes_(0),
       packNo_(0)
   {
-    LOG_INFO << "Receive context of "<< filePath<<" construct";
+    // LOG_INFO << "Receive context of "<< filePath<<" construct";
   }
   ~ReceiveContext(){
-    LOG_INFO << "Receive context destroy";
+    // LOG_INFO << "Receive context destroy";
     receiveFileStream_.flush();
     receiveFileStream_.close();
   }
@@ -124,8 +124,14 @@ typedef std::shared_ptr<ReceiveContext> ReceiveContextPtr;
 typedef std::map<std::string,ReceiveContextPtr> ReceiveContextMap;
 
 struct Context{
+  Context()
+  : deviceId(0)
+  {
+
+  }
   TransferContextQue transferContextQue;
   ReceiveContextMap receiveContextMap;
+  int deviceId;
 };
 typedef std::shared_ptr<Context> ContextPtr;
 

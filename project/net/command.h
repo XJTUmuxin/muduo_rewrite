@@ -1,11 +1,13 @@
 #ifndef PROJECT_NET_COMMAND_H
 #define PROJECT_NET_COMMAND_H
 
-#define REQUESTSYN 1
-#define GET 2
-#define POST 3
-#define DELETE 4
-#define MOVE 5
+#define REQUESTINIT 1
+#define INITEND 2
+#define REQUESTSYN 3
+#define GET 4
+#define POST 5
+#define DELETE 6
+#define MOVE 7
 
 
 #endif

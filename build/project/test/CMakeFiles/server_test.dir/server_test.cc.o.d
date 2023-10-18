@@ -144,34 +144,20 @@ project/test/CMakeFiles/server_test.dir/server_test.cc.o: \
  /usr/include/c++/11/bits/basic_string.tcc /usr/include/assert.h \
  /home/muxin/hdd/muduo_rewrite/muduo/base/Timestamp.h \
  /home/muxin/hdd/muduo_rewrite/muduo/base/copyable.h \
- /home/muxin/hdd/muduo_rewrite/muduo/net/TcpServer.h \
- /home/muxin/hdd/muduo_rewrite/muduo/base/Atomic.h \
- /home/muxin/hdd/muduo_rewrite/muduo/net/TcpConnection.h \
- /home/muxin/hdd/muduo_rewrite/muduo/net/Callbacks.h \
- /usr/include/c++/11/functional /usr/include/c++/11/tuple \
- /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
- /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
- /usr/include/c++/11/bits/invoke.h /usr/include/c++/11/bits/refwrap.h \
- /usr/include/c++/11/bits/std_function.h /usr/include/c++/11/typeinfo \
- /usr/include/c++/11/unordered_map \
- /usr/include/c++/11/ext/aligned_buffer.h \
- /usr/include/c++/11/bits/hashtable.h \
- /usr/include/c++/11/bits/hashtable_policy.h \
- /usr/include/c++/11/bits/enable_special_members.h \
- /usr/include/c++/11/bits/node_handle.h \
- /usr/include/c++/11/bits/unordered_map.h \
- /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/vector \
- /usr/include/c++/11/bits/stl_uninitialized.h \
- /usr/include/c++/11/bits/stl_vector.h \
- /usr/include/c++/11/bits/stl_bvector.h \
- /usr/include/c++/11/bits/vector.tcc /usr/include/c++/11/memory \
- /usr/include/c++/11/bits/stl_raw_storage_iter.h \
- /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
- /usr/include/c++/11/bits/unique_ptr.h /usr/include/c++/11/ostream \
- /usr/include/c++/11/ios /usr/include/c++/11/exception \
- /usr/include/c++/11/bits/exception_ptr.h \
+ /home/muxin/hdd/muduo_rewrite/muduo/base/AsyncLogging.h \
+ /home/muxin/hdd/muduo_rewrite/muduo/base/BlockingQueue.h \
+ /home/muxin/hdd/muduo_rewrite/muduo/base/Condition.h \
+ /home/muxin/hdd/muduo_rewrite/muduo/base/Mutex.h \
+ /home/muxin/hdd/muduo_rewrite/muduo/base/CurrentThread.h \
+ /usr/include/c++/11/deque /usr/include/c++/11/bits/stl_uninitialized.h \
+ /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
+ /home/muxin/hdd/muduo_rewrite/muduo/base/BoundedBlockingQueue.h \
+ /home/muxin/hdd/muduo_rewrite/muduo/base/CircularBuffer.h \
+ /usr/include/c++/11/cstddef /usr/include/c++/11/iostream \
+ /usr/include/c++/11/ostream /usr/include/c++/11/ios \
+ /usr/include/c++/11/exception /usr/include/c++/11/bits/exception_ptr.h \
  /usr/include/c++/11/bits/cxxabi_init_exception.h \
- /usr/include/c++/11/bits/nested_exception.h \
+ /usr/include/c++/11/typeinfo /usr/include/c++/11/bits/nested_exception.h \
  /usr/include/c++/11/bits/ios_base.h \
  /usr/include/c++/11/bits/locale_classes.h \
  /usr/include/c++/11/bits/locale_classes.tcc \
@@ -187,10 +173,19 @@ project/test/CMakeFiles/server_test.dir/server_test.cc.o: \
  /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
  /usr/include/c++/11/bits/locale_facets.tcc \
  /usr/include/c++/11/bits/basic_ios.tcc \
- /usr/include/c++/11/bits/ostream.tcc \
+ /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
+ /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/memory \
+ /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
+ /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/unique_ptr.h /usr/include/c++/11/utility \
+ /usr/include/c++/11/bits/stl_relops.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/invoke.h \
  /usr/include/c++/11/bits/shared_ptr.h \
  /usr/include/c++/11/bits/shared_ptr_base.h \
  /usr/include/c++/11/bits/allocated_ptr.h \
+ /usr/include/c++/11/bits/refwrap.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
  /usr/include/c++/11/ext/concurrence.h \
  /usr/include/c++/11/bits/shared_ptr_atomic.h \
  /usr/include/c++/11/bits/atomic_base.h \
@@ -223,6 +218,23 @@ project/test/CMakeFiles/server_test.dir/server_test.cc.o: \
  /usr/include/c++/11/bits/uses_allocator_args.h \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h \
+ /home/muxin/hdd/muduo_rewrite/muduo/base/CountDownLatch.h \
+ /home/muxin/hdd/muduo_rewrite/muduo/base/Thread.h \
+ /home/muxin/hdd/muduo_rewrite/muduo/base/Atomic.h \
+ /usr/include/c++/11/functional /usr/include/c++/11/bits/std_function.h \
+ /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
+ /usr/include/c++/11/bits/hashtable_policy.h \
+ /usr/include/c++/11/bits/enable_special_members.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/unordered_map.h \
+ /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/vector \
+ /usr/include/c++/11/bits/stl_vector.h \
+ /usr/include/c++/11/bits/stl_bvector.h \
+ /usr/include/c++/11/bits/vector.tcc /usr/include/c++/11/atomic \
+ /home/muxin/hdd/muduo_rewrite/muduo/base/LogFile.h \
+ /home/muxin/hdd/muduo_rewrite/muduo/net/TcpServer.h \
+ /home/muxin/hdd/muduo_rewrite/muduo/net/TcpConnection.h \
+ /home/muxin/hdd/muduo_rewrite/muduo/net/Callbacks.h \
  /home/muxin/hdd/muduo_rewrite/muduo/net/Buffer.h \
  /home/muxin/hdd/muduo_rewrite/muduo/net/Endian.h \
  /usr/include/c++/11/algorithm /usr/include/c++/11/bits/ranges_algo.h \
@@ -250,11 +262,7 @@ project/test/CMakeFiles/server_test.dir/server_test.cc.o: \
  /usr/include/c++/11/bits/stl_map.h \
  /usr/include/c++/11/bits/stl_multimap.h \
  /home/muxin/hdd/muduo_rewrite/muduo/net/EventLoop.h \
- /usr/include/c++/11/atomic \
- /home/muxin/hdd/muduo_rewrite/muduo/base/Mutex.h \
- /home/muxin/hdd/muduo_rewrite/muduo/base/CurrentThread.h \
  /home/muxin/hdd/muduo_rewrite/muduo/net/TimerId.h \
- /usr/include/c++/11/cstddef \
  /home/muxin/hdd/muduo_rewrite/project/net/Server.h \
  /home/muxin/hdd/muduo_rewrite/project/file/FileNode.h \
  /usr/include/c++/11/filesystem /usr/include/c++/11/bits/fs_fwd.h \
@@ -269,10 +277,9 @@ project/test/CMakeFiles/server_test.dir/server_test.cc.o: \
  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
  /usr/include/c++/11/bits/locale_conv.h /usr/include/c++/11/iomanip \
  /usr/include/c++/11/bits/quoted_string.h /usr/include/c++/11/sstream \
- /usr/include/c++/11/istream /usr/include/c++/11/bits/istream.tcc \
  /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/codecvt \
  /usr/include/c++/11/bits/fs_dir.h /usr/include/c++/11/bits/fs_ops.h \
- /usr/include/c++/11/iostream /usr/local/include/nlohmann/json.hpp \
+ /usr/local/include/nlohmann/json.hpp \
  /usr/local/include/nlohmann/adl_serializer.hpp \
  /usr/local/include/nlohmann/detail/abi_macros.hpp \
  /usr/local/include/nlohmann/detail/conversions/from_json.hpp \
@@ -357,5 +364,7 @@ project/test/CMakeFiles/server_test.dir/server_test.cc.o: \
  /usr/local/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
  /home/muxin/hdd/muduo_rewrite/project/net/codec.h \
  /home/muxin/hdd/muduo_rewrite/project/net/command.h \
+ /home/muxin/hdd/muduo_rewrite/project/net/FileOperations.h \
+ /usr/include/c++/11/queue /usr/include/c++/11/bits/stl_queue.h \
  /usr/include/c++/11/set /usr/include/c++/11/bits/stl_set.h \
  /usr/include/c++/11/bits/stl_multiset.h

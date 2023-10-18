@@ -11,6 +11,7 @@
 using namespace project;
 using namespace project::file; 
 using namespace muduo;
+using namespace std;
 
 namespace fs = std::filesystem;
 
@@ -22,6 +23,10 @@ FileNode::FileNode(const fs::path& filePath)
   modifyTime_ = std::chrono::system_clock::to_time_t(std::chrono::file_clock::to_sys(lastWriteTime));
   if(isDirctory_){
     for(const auto& entry : fs::directory_iterator(filePath)){
+      if(entry.path().filename().string()[0] == '.' || entry.path().filename().extension()==".downtemp"){
+        // hidden file
+        continue;
+      }
       if(fs::is_directory(entry.path()) || fs::is_regular_file(entry.path())){
         children_[entry.path().filename()] = std::shared_ptr<FileNode>(new FileNode(entry.path()));
       }
@@ -136,7 +141,7 @@ json FileNode::serialize(){
   return jsonData;
 }
 
-void FileNode::addFile(const fs::path& filePath,bool isDir,time_t modifyTime)
+shared_ptr<FileNode> FileNode::getParentNode(const fs::path& filePath)
 {
   NodePtr fileNodePtr = shared_from_this();
   auto iter = filePath.begin();
@@ -145,6 +150,27 @@ void FileNode::addFile(const fs::path& filePath,bool isDir,time_t modifyTime)
     assert(fileNodePtr->children_.count(fileName));
     fileNodePtr = fileNodePtr->children_[fileName];
   }
-  fs::path fileName = *iter;
+  return fileNodePtr;
+}
+
+void FileNode::addFile(const fs::path& filePath,bool isDir,time_t modifyTime)
+{
+  NodePtr fileNodePtr = getParentNode(filePath);
+  fs::path fileName = filePath.filename();
   fileNodePtr->children_[fileName] = NodePtr(new FileNode(isDir,modifyTime));
+}
+
+void FileNode::deleteFile(const fs::path& filePath)
+{
+  NodePtr fileNodePtr = getParentNode(filePath);
+  fs::path fileName = filePath.filename();
+  assert(fileNodePtr->children_.count(fileName));
+  fileNodePtr->children_.erase(fileName);
+} 
+void FileNode::moveTo(const fs::path& oldFileName,const std::shared_ptr<FileNode>& targetParentNode,
+  const fs::path& newFileName)
+{
+  auto moveNode = children_[oldFileName];
+  children_.erase(oldFileName);
+  targetParentNode->children_[newFileName] = moveNode; 
 }

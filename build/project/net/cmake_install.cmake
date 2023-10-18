@@ -50,6 +50,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/project/net" TYPE FILE FILES
     "/home/muxin/hdd/muduo_rewrite/project/net/Client.h"
     "/home/muxin/hdd/muduo_rewrite/project/net/Context.h"
+    "/home/muxin/hdd/muduo_rewrite/project/net/FileOperations.h"
     "/home/muxin/hdd/muduo_rewrite/project/net/Server.h"
     "/home/muxin/hdd/muduo_rewrite/project/net/codec.h"
     "/home/muxin/hdd/muduo_rewrite/project/net/command.h"

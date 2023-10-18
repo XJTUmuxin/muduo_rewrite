@@ -386,8 +386,23 @@ project/test/CMakeFiles/serial_test.dir/serial_test.cc.o: ../project/test/serial
   /usr/local/include/nlohmann/ordered_map.hpp \
   /usr/include/c++/11/any \
   /usr/local/include/nlohmann/detail/macro_unscope.hpp \
-  /usr/local/include/nlohmann/thirdparty/hedley/hedley_undef.hpp
+  /usr/local/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
+  ../muduo/base/Logging.h \
+  ../muduo/base/LogStream.h \
+  ../muduo/base/noncopyable.h \
+  ../muduo/base/StringPiece.h \
+  ../muduo/base/Types.h \
+  ../muduo/base/Timestamp.h \
+  ../muduo/base/copyable.h
 
+
+../muduo/base/Timestamp.h:
+
+../muduo/base/Types.h:
+
+../muduo/base/noncopyable.h:
+
+../muduo/base/LogStream.h:
 
 /usr/local/include/nlohmann/thirdparty/hedley/hedley_undef.hpp:
 
@@ -396,6 +411,8 @@ project/test/CMakeFiles/serial_test.dir/serial_test.cc.o: ../project/test/serial
 /usr/local/include/nlohmann/detail/conversions/to_chars.hpp:
 
 /usr/local/include/nlohmann/detail/output/binary_writer.hpp:
+
+../muduo/base/Logging.h:
 
 /usr/local/include/nlohmann/detail/json_ref.hpp:
 
@@ -573,6 +590,8 @@ project/test/CMakeFiles/serial_test.dir/serial_test.cc.o: ../project/test/serial
 
 /usr/include/c++/11/bit:
 
+../muduo/base/StringPiece.h:
+
 /usr/include/c++/11/backward/binders.h:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
@@ -628,6 +647,8 @@ project/test/CMakeFiles/serial_test.dir/serial_test.cc.o: ../project/test/serial
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
 /usr/include/c++/11/bits/ranges_cmp.h:
+
+../muduo/base/copyable.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
