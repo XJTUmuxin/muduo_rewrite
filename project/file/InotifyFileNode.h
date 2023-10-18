@@ -51,7 +51,7 @@ public:
   : wd_(-1),
     filePath_(filePath)
   {
-    LOG_INFO<<"FileNode of "<<filePath_<<" construct";
+    LOG_DEBUG<<"FileNode of "<<filePath_<<" construct";
     isDirctory_ = fs::is_directory(filePath);
     assert(fs::is_directory(filePath) || fs::is_regular_file(filePath));
     auto lastWriteTime = fs::last_write_time(filePath);
@@ -82,7 +82,7 @@ public:
     wd_(-1),
     filePath_(filePath)
   {
-    LOG_INFO<<"FileNode of "<<filePath_<<" construct";
+    LOG_DEBUG<<"FileNode of "<<filePath_<<" construct";
     if(isDirctory_){
       wd_ = inotify_add_watch(inotifyFd_,filePath.c_str(),IN_ALL_EVENTS);
       LOG_DEBUG <<filePath<<" added to watch with wd "<<wd_;

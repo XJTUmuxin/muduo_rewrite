@@ -174,11 +174,65 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
   /usr/include/assert.h \
   ../muduo/base/Timestamp.h \
   ../muduo/base/copyable.h \
-  ../project/net/Client.h \
+  ../muduo/base/AsyncLogging.h \
+  ../muduo/base/BlockingQueue.h \
+  ../muduo/base/Condition.h \
   ../muduo/base/Mutex.h \
   ../muduo/base/CurrentThread.h \
-  ../muduo/net/EventLoop.h \
-  /usr/include/c++/11/atomic \
+  /usr/include/c++/11/deque \
+  /usr/include/c++/11/bits/stl_uninitialized.h \
+  /usr/include/c++/11/bits/stl_deque.h \
+  /usr/include/c++/11/bits/deque.tcc \
+  ../muduo/base/BoundedBlockingQueue.h \
+  ../muduo/base/CircularBuffer.h \
+  /usr/include/c++/11/cstddef \
+  /usr/include/c++/11/iostream \
+  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/ios \
+  /usr/include/c++/11/exception \
+  /usr/include/c++/11/bits/exception_ptr.h \
+  /usr/include/c++/11/bits/cxxabi_init_exception.h \
+  /usr/include/c++/11/typeinfo \
+  /usr/include/c++/11/bits/nested_exception.h \
+  /usr/include/c++/11/bits/ios_base.h \
+  /usr/include/c++/11/bits/locale_classes.h \
+  /usr/include/c++/11/bits/locale_classes.tcc \
+  /usr/include/c++/11/system_error \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h \
+  /usr/include/c++/11/stdexcept \
+  /usr/include/c++/11/streambuf \
+  /usr/include/c++/11/bits/streambuf.tcc \
+  /usr/include/c++/11/bits/basic_ios.h \
+  /usr/include/c++/11/bits/locale_facets.h \
+  /usr/include/c++/11/cwctype \
+  /usr/include/wctype.h \
+  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h \
+  /usr/include/c++/11/bits/streambuf_iterator.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
+  /usr/include/c++/11/bits/locale_facets.tcc \
+  /usr/include/c++/11/bits/basic_ios.tcc \
+  /usr/include/c++/11/bits/ostream.tcc \
+  /usr/include/c++/11/istream \
+  /usr/include/c++/11/bits/istream.tcc \
+  /usr/include/c++/11/memory \
+  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/11/bits/align.h \
+  /usr/include/c++/11/bit \
+  /usr/include/c++/11/bits/uses_allocator.h \
+  /usr/include/c++/11/bits/unique_ptr.h \
+  /usr/include/c++/11/utility \
+  /usr/include/c++/11/bits/stl_relops.h \
+  /usr/include/c++/11/tuple \
+  /usr/include/c++/11/array \
+  /usr/include/c++/11/bits/invoke.h \
+  /usr/include/c++/11/bits/shared_ptr.h \
+  /usr/include/c++/11/bits/shared_ptr_base.h \
+  /usr/include/c++/11/bits/allocated_ptr.h \
+  /usr/include/c++/11/bits/refwrap.h \
+  /usr/include/c++/11/ext/aligned_buffer.h \
+  /usr/include/c++/11/ext/concurrence.h \
+  /usr/include/c++/11/bits/shared_ptr_atomic.h \
   /usr/include/c++/11/bits/atomic_base.h \
   /usr/include/c++/11/bits/atomic_lockfree_defines.h \
   /usr/include/c++/11/bits/atomic_wait.h \
@@ -206,66 +260,6 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
   /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
   /usr/include/x86_64-linux-gnu/bits/syscall.h \
   /usr/include/c++/11/bits/std_mutex.h \
-  /usr/include/c++/11/system_error \
-  /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h \
-  /usr/include/c++/11/stdexcept \
-  /usr/include/c++/11/exception \
-  /usr/include/c++/11/bits/exception_ptr.h \
-  /usr/include/c++/11/bits/cxxabi_init_exception.h \
-  /usr/include/c++/11/typeinfo \
-  /usr/include/c++/11/bits/nested_exception.h \
-  /usr/include/c++/11/functional \
-  /usr/include/c++/11/tuple \
-  /usr/include/c++/11/utility \
-  /usr/include/c++/11/bits/stl_relops.h \
-  /usr/include/c++/11/array \
-  /usr/include/c++/11/bits/uses_allocator.h \
-  /usr/include/c++/11/bits/invoke.h \
-  /usr/include/c++/11/bits/refwrap.h \
-  /usr/include/c++/11/bits/std_function.h \
-  /usr/include/c++/11/unordered_map \
-  /usr/include/c++/11/ext/aligned_buffer.h \
-  /usr/include/c++/11/bits/hashtable.h \
-  /usr/include/c++/11/bits/hashtable_policy.h \
-  /usr/include/c++/11/bits/enable_special_members.h \
-  /usr/include/c++/11/bits/node_handle.h \
-  /usr/include/c++/11/bits/unordered_map.h \
-  /usr/include/c++/11/bits/erase_if.h \
-  /usr/include/c++/11/vector \
-  /usr/include/c++/11/bits/stl_uninitialized.h \
-  /usr/include/c++/11/bits/stl_vector.h \
-  /usr/include/c++/11/bits/stl_bvector.h \
-  /usr/include/c++/11/bits/vector.tcc \
-  /usr/include/c++/11/any \
-  ../muduo/net/Callbacks.h \
-  /usr/include/c++/11/memory \
-  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
-  /usr/include/c++/11/bits/align.h \
-  /usr/include/c++/11/bit \
-  /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/c++/11/ostream \
-  /usr/include/c++/11/ios \
-  /usr/include/c++/11/bits/ios_base.h \
-  /usr/include/c++/11/bits/locale_classes.h \
-  /usr/include/c++/11/bits/locale_classes.tcc \
-  /usr/include/c++/11/streambuf \
-  /usr/include/c++/11/bits/streambuf.tcc \
-  /usr/include/c++/11/bits/basic_ios.h \
-  /usr/include/c++/11/bits/locale_facets.h \
-  /usr/include/c++/11/cwctype \
-  /usr/include/wctype.h \
-  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
-  /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h \
-  /usr/include/c++/11/bits/streambuf_iterator.h \
-  /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
-  /usr/include/c++/11/bits/locale_facets.tcc \
-  /usr/include/c++/11/bits/basic_ios.tcc \
-  /usr/include/c++/11/bits/ostream.tcc \
-  /usr/include/c++/11/bits/shared_ptr.h \
-  /usr/include/c++/11/bits/shared_ptr_base.h \
-  /usr/include/c++/11/bits/allocated_ptr.h \
-  /usr/include/c++/11/ext/concurrence.h \
-  /usr/include/c++/11/bits/shared_ptr_atomic.h \
   /usr/include/c++/11/backward/auto_ptr.h \
   /usr/include/c++/11/bits/ranges_uninitialized.h \
   /usr/include/c++/11/bits/ranges_algobase.h \
@@ -274,8 +268,28 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
   /usr/include/c++/11/bits/uses_allocator_args.h \
   /usr/include/c++/11/pstl/glue_memory_defs.h \
   /usr/include/c++/11/pstl/execution_defs.h \
+  ../muduo/base/CountDownLatch.h \
+  ../muduo/base/Thread.h \
+  ../muduo/base/Atomic.h \
+  /usr/include/c++/11/functional \
+  /usr/include/c++/11/bits/std_function.h \
+  /usr/include/c++/11/unordered_map \
+  /usr/include/c++/11/bits/hashtable.h \
+  /usr/include/c++/11/bits/hashtable_policy.h \
+  /usr/include/c++/11/bits/enable_special_members.h \
+  /usr/include/c++/11/bits/node_handle.h \
+  /usr/include/c++/11/bits/unordered_map.h \
+  /usr/include/c++/11/bits/erase_if.h \
+  /usr/include/c++/11/vector \
+  /usr/include/c++/11/bits/stl_vector.h \
+  /usr/include/c++/11/bits/stl_bvector.h \
+  /usr/include/c++/11/bits/vector.tcc \
+  /usr/include/c++/11/atomic \
+  ../project/net/Client.h \
+  ../muduo/net/EventLoop.h \
+  /usr/include/c++/11/any \
+  ../muduo/net/Callbacks.h \
   ../muduo/net/TimerId.h \
-  /usr/include/c++/11/cstddef \
   ../muduo/net/TcpClient.h \
   ../muduo/net/TcpConnection.h \
   ../muduo/net/Buffer.h \
@@ -325,8 +339,6 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
   /usr/include/c++/11/iomanip \
   /usr/include/c++/11/bits/quoted_string.h \
   /usr/include/c++/11/sstream \
-  /usr/include/c++/11/istream \
-  /usr/include/c++/11/bits/istream.tcc \
   /usr/include/c++/11/bits/sstream.tcc \
   /usr/include/c++/11/codecvt \
   /usr/include/c++/11/bits/fs_dir.h \
@@ -335,7 +347,6 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/c++/11/iostream \
   /usr/local/include/nlohmann/json.hpp \
   /usr/local/include/nlohmann/adl_serializer.hpp \
   /usr/local/include/nlohmann/detail/abi_macros.hpp \
@@ -443,9 +454,6 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
   /usr/include/c++/11/bits/fstream.tcc \
   /usr/include/c++/11/queue \
-  /usr/include/c++/11/deque \
-  /usr/include/c++/11/bits/stl_deque.h \
-  /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/bits/stl_queue.h \
   /home/muxin/anaconda3/include/boost/beast/core/detail/base64.hpp \
   /home/muxin/anaconda3/include/boost/beast/core/string.hpp \
@@ -522,8 +530,6 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 /home/muxin/anaconda3/include/boost/config/platform/linux.hpp:
 
 /home/muxin/anaconda3/include/boost/config/stdlib/libstdcpp3.hpp:
-
-/usr/include/c++/11/deque:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
 
@@ -663,10 +669,6 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 /usr/include/c++/11/valarray:
 
-/usr/include/c++/11/bits/deque.tcc:
-
-/usr/local/include/nlohmann/detail/conversions/from_json.hpp:
-
 /usr/local/include/nlohmann/adl_serializer.hpp:
 
 /usr/local/include/nlohmann/json.hpp:
@@ -683,17 +685,9 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 /usr/include/c++/11/bits/fs_dir.h:
 
-/usr/local/include/nlohmann/detail/iterators/primitive_iterator.hpp:
-
-/usr/include/c++/11/bits/istream.tcc:
-
-/usr/include/c++/11/istream:
-
 /usr/include/c++/11/bits/quoted_string.h:
 
 /usr/include/c++/11/bits/locale_conv.h:
-
-/usr/include/c++/11/bits/locale_facets_nonio.tcc:
 
 /usr/include/libintl.h:
 
@@ -729,8 +723,6 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 /usr/include/asm-generic/posix_types.h:
 
-/usr/include/linux/posix_types.h:
-
 /usr/include/x86_64-linux-gnu/bits/sockaddr.h:
 
 /usr/include/x86_64-linux-gnu/bits/socket_type.h:
@@ -755,6 +747,32 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 ../muduo/net/TimerId.h:
 
+../muduo/net/Callbacks.h:
+
+/usr/include/c++/11/bits/parse_numbers.h:
+
+../muduo/net/EventLoop.h:
+
+/usr/include/c++/11/atomic:
+
+/usr/include/c++/11/bits/vector.tcc:
+
+/usr/include/c++/11/vector:
+
+/usr/include/c++/11/bits/unordered_map.h:
+
+/usr/include/c++/11/bits/hashtable_policy.h:
+
+/usr/include/c++/11/bits/hashtable.h:
+
+/usr/include/c++/11/unordered_map:
+
+/usr/include/c++/11/bits/locale_facets_nonio.tcc:
+
+../muduo/base/Atomic.h:
+
+../muduo/base/Thread.h:
+
 /usr/include/c++/11/forward_list:
 
 /usr/include/c++/11/pstl/glue_memory_defs.h:
@@ -765,27 +783,23 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 /usr/include/c++/11/bits/stream_iterator.h:
 
-/usr/include/c++/11/queue:
+/usr/include/c++/11/tr1/poly_laguerre.tcc:
 
-/usr/include/c++/11/bits/shared_ptr_atomic.h:
+/usr/include/c++/11/bits/std_mutex.h:
 
-/usr/local/include/nlohmann/detail/iterators/iterator_traits.hpp:
-
-/usr/include/c++/11/ext/concurrence.h:
-
-/usr/local/include/nlohmann/detail/iterators/json_reverse_iterator.hpp:
-
-/usr/include/c++/11/bits/allocated_ptr.h:
-
-/usr/include/c++/11/bits/ostream.tcc:
+/usr/include/x86_64-linux-gnu/bits/syscall.h:
 
 /usr/local/include/nlohmann/detail/meta/identity_tag.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
-/usr/include/c++/11/bits/stl_deque.h:
+/home/muxin/anaconda3/include/boost/beast/core/string.hpp:
 
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+/usr/local/include/nlohmann/detail/json_custom_base_class.hpp:
+
+/usr/include/c++/11/bits/std_function.h:
+
+/usr/include/c++/11/bits/stl_tempbuf.h:
 
 /usr/include/c++/11/cstring:
 
@@ -815,6 +829,10 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
+/usr/local/include/nlohmann/detail/iterators/json_reverse_iterator.hpp:
+
+/usr/include/c++/11/bits/allocated_ptr.h:
+
 /usr/include/x86_64-linux-gnu/asm/socket.h:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
@@ -829,6 +847,8 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 /usr/include/wchar.h:
 
+../muduo/base/CountDownLatch.h:
+
 /usr/include/c++/11/bits/cxxabi_init_exception.h:
 
 /usr/local/include/nlohmann/detail/meta/cpp_future.hpp:
@@ -842,6 +862,16 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 /usr/include/c++/11/bits/stl_iterator_base_types.h:
 
 /usr/include/c++/11/bit:
+
+/usr/local/include/nlohmann/detail/conversions/from_json.hpp:
+
+/usr/include/c++/11/bits/deque.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
+
+/usr/include/c++/11/bits/node_handle.h:
+
+/usr/include/c++/11/iostream:
 
 /home/muxin/anaconda3/include/boost/config/user.hpp:
 
@@ -869,10 +899,6 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 /usr/include/c++/11/bits/atomic_wait.h:
 
-/usr/include/c++/11/bits/shared_ptr.h:
-
-/usr/include/c++/11/bits/stl_construct.h:
-
 /usr/include/c++/11/bits/ranges_algo.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
@@ -899,6 +925,8 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 /usr/include/c++/11/clocale:
 
+/usr/include/c++/11/bits/ostream.tcc:
+
 /usr/include/linux/falloc.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
@@ -921,10 +949,6 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 /usr/include/c++/11/bits/stringfwd.h:
 
-/usr/include/c++/11/bits/locale_facets.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
-
 /usr/include/x86_64-linux-gnu/bits/socket.h:
 
 ../muduo/base/Types.h:
@@ -935,15 +959,13 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
+/usr/include/c++/11/bits/stl_vector.h:
+
+/usr/include/c++/11/cstddef:
+
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 
 /usr/include/x86_64-linux-gnu/bits/local_lim.h:
-
-/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
-
-/usr/include/c++/11/iostream:
-
-/usr/include/c++/11/bits/node_handle.h:
 
 /usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
 
@@ -993,6 +1015,10 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 /usr/include/x86_64-linux-gnu/bits/byteswap.h:
 
+/usr/include/c++/11/bits/stl_construct.h:
+
+/usr/include/c++/11/bits/shared_ptr.h:
+
 /usr/include/c++/11/cmath:
 
 /usr/include/c++/11/bits/allocator.h:
@@ -1003,15 +1029,9 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 /usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 
-/home/muxin/anaconda3/include/boost/beast/core/string.hpp:
-
-/usr/local/include/nlohmann/detail/json_custom_base_class.hpp:
-
-/usr/include/c++/11/bits/stl_tempbuf.h:
-
-/usr/include/c++/11/bits/std_function.h:
-
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
+
+../muduo/base/BlockingQueue.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
@@ -1049,6 +1069,8 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
+/usr/include/c++/11/deque:
+
 ../muduo/base/noncopyable.h:
 
 /usr/include/c++/11/ext/atomicity.h:
@@ -1079,9 +1101,9 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 /usr/include/asm-generic/errno-base.h:
 
-../muduo/net/Callbacks.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
+
+../muduo/base/AsyncLogging.h:
 
 /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
@@ -1099,10 +1121,6 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
 
-/usr/include/c++/11/tr1/poly_laguerre.tcc:
-
-/usr/include/c++/11/bits/std_mutex.h:
-
 /home/muxin/anaconda3/include/boost/beast/core/detail/string.hpp:
 
 /usr/include/asm-generic/bitsperlong.h:
@@ -1111,11 +1129,19 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 /usr/include/c++/11/bits/concept_check.h:
 
+/usr/include/c++/11/bits/erase_if.h:
+
+/usr/include/endian.h:
+
+/usr/include/c++/11/bits/ptr_traits.h:
+
+/usr/include/stdint.h:
+
 /usr/local/include/nlohmann/json_fwd.hpp:
 
-/usr/include/c++/11/bits/shared_ptr_base.h:
-
 /usr/include/c++/11/bits/basic_string.h:
+
+/usr/include/c++/11/bits/shared_ptr_base.h:
 
 /usr/include/linux/limits.h:
 
@@ -1159,15 +1185,11 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
 
-/usr/include/c++/11/unordered_map:
-
 /usr/include/c++/11/bits/std_abs.h:
 
 /usr/include/c++/11/bits/ranges_base.h:
 
 /usr/include/c++/11/bits/stl_heap.h:
-
-/usr/include/c++/11/atomic:
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
@@ -1179,7 +1201,9 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/gthr-default.h:
 
-/usr/include/c++/11/bits/unordered_map.h:
+/usr/local/include/nlohmann/detail/iterators/iterator_traits.hpp:
+
+/usr/include/c++/11/ext/concurrence.h:
 
 /usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
 
@@ -1194,6 +1218,14 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 /usr/include/c++/11/bits/invoke.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
+
+/usr/include/c++/11/bits/fs_fwd.h:
+
+/usr/include/c++/11/bits/stl_bvector.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
 /usr/include/c++/11/tr1/legendre_function.tcc:
 
@@ -1285,23 +1317,61 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 ../muduo/base/Timestamp.h:
 
-/usr/include/endian.h:
+/usr/include/linux/posix_types.h:
 
-/usr/include/c++/11/bits/ptr_traits.h:
+../muduo/base/BoundedBlockingQueue.h:
 
-/usr/include/stdint.h:
-
-/usr/include/c++/11/bits/erase_if.h:
+../muduo/base/Condition.h:
 
 ../muduo/base/Mutex.h:
 
-/usr/include/c++/11/bits/parse_numbers.h:
+/usr/include/c++/11/bits/stl_uninitialized.h:
 
-../muduo/net/EventLoop.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
-/usr/include/c++/11/bits/valarray_array.tcc:
+/usr/include/c++/11/bits/stl_deque.h:
 
-/usr/include/c++/11/bits/atomic_lockfree_defines.h:
+../muduo/base/CircularBuffer.h:
+
+/usr/include/c++/11/ostream:
+
+/usr/include/c++/11/any:
+
+/usr/include/c++/11/bits/unique_ptr.h:
+
+/usr/local/include/nlohmann/detail/macro_scope.hpp:
+
+/usr/include/c++/11/exception:
+
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
+
+/usr/include/c++/11/typeinfo:
+
+/home/muxin/anaconda3/include/boost/beast/core/detail/config.hpp:
+
+/usr/include/c++/11/bits/nested_exception.h:
+
+/usr/local/include/nlohmann/detail/string_concat.hpp:
+
+/usr/include/c++/11/bits/ios_base.h:
+
+/usr/include/c++/11/bits/locale_classes.h:
+
+/usr/include/c++/11/bits/locale_classes.tcc:
+
+/usr/include/c++/11/system_error:
+
+/home/muxin/anaconda3/include/boost/beast/core/detail/base64.hpp:
+
+/usr/include/c++/11/ios:
+
+/usr/include/c++/11/utility:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h:
+
+/usr/include/c++/11/pstl/glue_algorithm_defs.h:
+
+/usr/include/c++/11/stdexcept:
 
 /usr/include/c++/11/codecvt:
 
@@ -1309,19 +1379,57 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 /usr/include/c++/11/bits/streambuf.tcc:
 
-/usr/include/c++/11/bits/sstream.tcc:
+/usr/include/c++/11/bits/valarray_array.tcc:
 
-/usr/include/c++/11/new:
+/usr/include/c++/11/bits/atomic_lockfree_defines.h:
 
-/usr/include/c++/11/climits:
+/usr/include/c++/11/bits/uniform_int_dist.h:
 
-/usr/include/c++/11/tr1/beta_function.tcc:
+/usr/include/c++/11/bits/basic_ios.h:
 
-/usr/include/c++/11/array:
+/usr/include/c++/11/bits/exception.h:
 
-/usr/include/c++/11/bits/valarray_before.h:
+/usr/include/c++/11/bits/locale_facets.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
+/usr/include/c++/11/cwctype:
+
+/usr/include/c++/11/bits/streambuf_iterator.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/usr/include/c++/11/bits/locale_facets.tcc:
+
+/usr/include/c++/11/bits/codecvt.h:
+
+../project/net/Client.h:
+
+/usr/include/c++/11/bits/enable_special_members.h:
+
+/usr/include/c++/11/bits/basic_ios.tcc:
+
+/usr/include/c++/11/istream:
+
+/usr/local/include/nlohmann/detail/iterators/primitive_iterator.hpp:
+
+/usr/include/c++/11/bits/istream.tcc:
+
+/usr/include/c++/11/memory:
+
+/usr/include/c++/11/bits/stl_raw_storage_iter.h:
+
+/usr/include/c++/11/bits/max_size_type.h:
+
+/usr/include/c++/11/bits/align.h:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+
+/usr/include/c++/11/bits/uses_allocator.h:
+
+/usr/include/limits.h:
+
+/usr/include/c++/11/bits/stl_relops.h:
 
 /usr/local/include/nlohmann/detail/string_escape.hpp:
 
@@ -1331,9 +1439,27 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
 
-/usr/include/c++/11/bits/stl_relops.h:
+/usr/include/c++/11/tr1/beta_function.tcc:
 
-/usr/include/limits.h:
+/usr/include/c++/11/array:
+
+/usr/include/c++/11/bits/sstream.tcc:
+
+/usr/include/c++/11/new:
+
+/usr/include/c++/11/climits:
+
+/usr/include/linux/stddef.h:
+
+/usr/include/c++/11/bits/refwrap.h:
+
+/usr/include/c++/11/queue:
+
+/usr/include/c++/11/bits/shared_ptr_atomic.h:
+
+/usr/include/c++/11/bits/valarray_before.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
 
@@ -1357,106 +1483,4 @@ project/test/CMakeFiles/client_test.dir/client_test.cc.o: ../project/test/client
 
 /usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
 
-/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
-
-/usr/include/c++/11/vector:
-
-/usr/include/c++/11/bits/max_size_type.h:
-
-/usr/include/c++/11/bits/align.h:
-
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
-
-/usr/include/x86_64-linux-gnu/bits/syscall.h:
-
-/usr/include/c++/11/memory:
-
-/usr/include/c++/11/system_error:
-
-/usr/include/c++/11/cstddef:
-
-/usr/include/c++/11/bits/stl_vector.h:
-
-/home/muxin/anaconda3/include/boost/beast/core/detail/base64.hpp:
-
-/usr/include/c++/11/ios:
-
-/usr/include/c++/11/utility:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h:
-
-/usr/include/c++/11/pstl/glue_algorithm_defs.h:
-
-/usr/include/c++/11/stdexcept:
-
-/usr/local/include/nlohmann/detail/macro_scope.hpp:
-
-/usr/include/c++/11/exception:
-
-/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
-
-/usr/include/c++/11/typeinfo:
-
-/home/muxin/anaconda3/include/boost/beast/core/detail/config.hpp:
-
-/usr/include/c++/11/bits/nested_exception.h:
-
-/usr/include/c++/11/bits/uses_allocator.h:
-
-/usr/include/linux/stddef.h:
-
-/usr/include/c++/11/bits/refwrap.h:
-
-/usr/include/c++/11/bits/hashtable.h:
-
-/usr/include/c++/11/bits/hashtable_policy.h:
-
-/usr/include/c++/11/bits/codecvt.h:
-
-/usr/include/c++/11/bits/basic_ios.tcc:
-
-../project/net/Client.h:
-
-/usr/include/c++/11/bits/enable_special_members.h:
-
-/usr/include/c++/11/bits/stl_uninitialized.h:
-
-/usr/include/c++/11/bits/fs_fwd.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
-
-/usr/include/c++/11/bits/stl_bvector.h:
-
-/usr/include/c++/11/bits/vector.tcc:
-
-/usr/include/c++/11/bits/stl_raw_storage_iter.h:
-
-/usr/include/c++/11/any:
-
-/usr/include/c++/11/bits/unique_ptr.h:
-
-/usr/include/c++/11/ostream:
-
-/usr/local/include/nlohmann/detail/string_concat.hpp:
-
-/usr/include/c++/11/bits/ios_base.h:
-
-/usr/include/c++/11/bits/locale_classes.h:
-
-/usr/include/c++/11/bits/locale_classes.tcc:
-
-/usr/include/c++/11/bits/uniform_int_dist.h:
-
-/usr/include/c++/11/bits/basic_ios.h:
-
-/usr/include/c++/11/bits/exception.h:
-
-/usr/include/c++/11/bits/locale_facets.h:
-
-/usr/include/c++/11/cwctype:
-
-/usr/include/c++/11/bits/streambuf_iterator.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h:

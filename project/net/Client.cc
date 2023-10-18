@@ -99,8 +99,8 @@ void Client::fileWatchHandle(Timestamp receiveTime)
     if (mask & IN_CLOSE_NOWRITE) operate = "CLOSE_NOWRITE";
     if (mask & IN_CREATE)      
     {  
-      operate = "CREATE" ;
-      LOG_INFO<<operate<<" "<<event->name;
+      // operate = "CREATE" ;
+      // LOG_INFO<<operate<<" "<<event->name;
       // LOG_INFO<<nodePtr->getFilePath() <<" "<<event->name<<": "<<operate <<" " ;
       fileWatchHandleCreate(event,nodePtr);
     }
@@ -503,7 +503,7 @@ void Client::onCommandMessage(const TcpConnectionPtr& conn,const json& jsonData)
 
 void Client::handleInitEnd(const TcpConnectionPtr& conn, const json& jsonData)
 {
-  int deviceId= jsonData;
+  int deviceId = jsonData;
 
   if(deviceId_>0){
     assert(deviceId == deviceId_);
