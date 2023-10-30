@@ -33,29 +33,40 @@ void asyncLog(const char* msg, int len)
 int main(int argc,char* argv[]){
     uint16_t port;
     if(argc>2){
-        AsyncLogging log(::basename(argv[0]), kRollSize);
-
-        g_asyncLog = &log;
-
-        Logger::setOutput(asyncLog);
-
         Logger::setLogLevel(Logger::DEBUG);
+        if(argc>3){
+            if(strcmp(argv[3],"filelog")==0){
+                Logger::setOutput(asyncLog);
+                
+                AsyncLogging log(::basename(argv[0]), kRollSize);
 
-        log.start();
+                g_asyncLog = &log;
 
-        LOG_INFO << "logging started";
+                log.start();
+                port = static_cast<uint16_t>(atoi(argv[1])); 
+                EventLoop loop;
+                InetAddress serverAddr(port); 
+                string path(argv[2]);
+                fs::path dirPath(path);
+                Server server(&loop,serverAddr,dirPath);
+                server.setThreadNum(5);
+                server.start();
+                loop.loop();
+                log.stop();
+            }
+        }
+        else{
+            port = static_cast<uint16_t>(atoi(argv[1])); 
+            EventLoop loop;
+            InetAddress serverAddr(port); 
+            string path(argv[2]);
+            fs::path dirPath(path);
+            Server server(&loop,serverAddr,dirPath);
+            server.setThreadNum(5);
+            server.start();
+            loop.loop();
+        }
 
-        port = static_cast<uint16_t>(atoi(argv[1])); 
-        EventLoop loop;
-        InetAddress serverAddr(port); 
-        string path(argv[2]);
-        fs::path dirPath(path);
-        Server server(&loop,serverAddr,dirPath);
-        server.setThreadNum(5);
-        server.start();
-        loop.loop();
-
-        log.stop();
         return 0;
     }
 }

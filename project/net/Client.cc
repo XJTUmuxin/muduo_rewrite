@@ -620,7 +620,7 @@ void Client::handleMove(const TcpConnectionPtr& conn,const json& jsonData)
   }
   fileWatchHandle(Timestamp::now()); // clear the event of sourcePath and targetPath
   filteredFiles_.erase(dirPath_ / sourcePath);
-  filteredFiles_.erase(dirPath_ / sourcePath);
+  filteredFiles_.erase(dirPath_ / targetPath);
 }
 
 void Client::requestSyn(const TcpConnectionPtr& conn){

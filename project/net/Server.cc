@@ -214,9 +214,11 @@ void Server::onDataMessage(const TcpConnectionPtr& conn, const json& jsonData){
       fileOperation.updateFile = filePath;
       fileOperation.isDir = false;
 
-      MutexLockGuard lock(offlineDeviceMutex_);
-      for(auto &device:offlineDeviceToFileOperationsMap_){
-        device.second.addOperations(fileOperation);
+      {
+        MutexLockGuard lock(offlineDeviceMutex_);
+        for(auto &device:offlineDeviceToFileOperationsMap_){
+          device.second.addOperations(fileOperation);
+        }
       }
     }
   }
@@ -226,30 +228,31 @@ void Server::handleRequestInit(const TcpConnectionPtr& conn, const json& jsonDat
 {
   int deviceId = jsonData;
   {
-  MutexLockGuard lock(offlineDeviceMutex_);
-  if(offlineDeviceToFileOperationsMap_.count(deviceId)){
-    // offline devide
-    auto fileOperations = offlineDeviceToFileOperationsMap_[deviceId];
-    offlineDeviceToFileOperationsMap_.erase(deviceId);
-    handleInit(conn,fileOperations);
-  }
-  else{
-    // new device
-    {
-      MutexLockGuard lock1(configMutex_);
-      int maxDeviceId = config_["maxDeviceId"];
-      deviceId = ++maxDeviceId;
-      config_["maxDeviceId"] = maxDeviceId;
-      config_["deviceIds"].push_back(maxDeviceId);
-
-      LOG_INFO << "New device Id "<<maxDeviceId;
-
-      fs::path configFilePath = dirPath_/CONFIG_FILE_PATH;
-      std::ofstream configFile(configFilePath);
-      configFile << config_;
-      configFile.close();
+    MutexLockGuard lock(offlineDeviceMutex_);
+    if(offlineDeviceToFileOperationsMap_.count(deviceId)){
+      // offline devide
+      auto fileOperations = offlineDeviceToFileOperationsMap_[deviceId];
+      offlineDeviceToFileOperationsMap_.erase(deviceId);
+      LOG_INFO << "Old device Id "<<deviceId<< " erase from the offline devices";
+      handleInit(conn,fileOperations);
     }
-  }
+    else{
+      // new device
+      {
+        MutexLockGuard lock1(configMutex_);
+        int maxDeviceId = config_["maxDeviceId"];
+        deviceId = ++maxDeviceId;
+        config_["maxDeviceId"] = maxDeviceId;
+        config_["deviceIds"].push_back(maxDeviceId);
+
+        LOG_INFO << "New device Id "<<maxDeviceId;
+
+        fs::path configFilePath = dirPath_/CONFIG_FILE_PATH;
+        std::ofstream configFile(configFilePath);
+        configFile << config_;
+        configFile.close();
+      }
+    }
   }
   const std::any& context = conn->getContext();
   assert(context.has_value() && context.type() == typeid(ContextPtr));
