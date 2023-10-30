@@ -36,6 +36,7 @@ private:
       inotify_rm_watch(inotifyFd_,wd_);
       wdNodePtrMap_.erase(wd_);
       int wd = inotify_add_watch(inotifyFd_,filePath_.c_str(),IN_ALL_EVENTS);
+      LOG_DEBUG << filePath_ <<"added to watch";
       wd_ = wd;
       wdNodePtrMap_[wd_] = shared_from_this();
       for(auto & pi:children_){
@@ -192,7 +193,7 @@ public:
   const fs::path& newFileName)
   {
     auto moveNode = children_[oldFileName];
-    moveNode->filePath_.replace_filename(newFileName);
+    moveNode->filePath_ = targetParentNode->filePath_ / newFileName;
     moveNode->updatePathAndInotifyWd();
     children_.erase(oldFileName);
     targetParentNode->children_[newFileName] = moveNode; 
