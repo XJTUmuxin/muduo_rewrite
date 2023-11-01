@@ -63,8 +63,6 @@ Client::Client(EventLoop* loop,const InetAddress& serverAddr,const fs::path& dir
 
   clearTimeoutMovefromEventTimer_ = client_.getLoop()->runEvery(5.0,std::bind(&Client::clearTimeoutMovefromEvents,this));
 
-  heartBeatSendTimer_ = client_.getLoop()->runEvery((double)HEARTBEAT_INTERVAL,std::bind(&Client::sendHeartBeat,this,connection_));
-
 }
 
 void Client::fileWatchHandle(Timestamp receiveTime)
@@ -380,11 +378,14 @@ void Client::onConnection(const TcpConnectionPtr& conn)
 
       connection_->setContext(ContextPtr(new Context()));
 
+      heartBeatSendTimer_ = client_.getLoop()->runEvery((double)HEARTBEAT_INTERVAL,std::bind(&Client::sendHeartBeat,this,connection_));
+
       requestInit(connection_);
     }
     else
     {
       connection_.reset();
+      client_.getLoop()->cancel(heartBeatSendTimer_);
     }
   }
 }
@@ -673,5 +674,6 @@ void Client::sendHeartBeat(const TcpConnectionPtr& conn){
   string message = jsonData.dump();
   if(conn){
     codec_.send(get_pointer(conn),message);
+    // LOG_DEBUG <<"Send heart beat"; 
   }
 }

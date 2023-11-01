@@ -93,6 +93,7 @@ void Server::onConnection(const TcpConnectionPtr& conn)
     const ContextPtr& contextPtr = any_cast<const ContextPtr&>(context);
     
     int deviceId = contextPtr->deviceId;
+    if(deviceId > 0)
     {
       // add offline Device
       LOG_INFO<<"Device "<< deviceId<<" offline";
@@ -233,6 +234,9 @@ void Server::onDataMessage(const TcpConnectionPtr& conn, const json& jsonData){
 
 void Server::handleRequestInit(const TcpConnectionPtr& conn, const json& jsonData)
 {
+  const std::any& context = conn->getContext();
+  assert(context.has_value() && context.type() == typeid(ContextPtr));
+  const ContextPtr& contextPtr = any_cast<const ContextPtr&>(context);
   int deviceId = jsonData;
   {
     MutexLockGuard lock(offlineDeviceMutex_);
@@ -264,14 +268,15 @@ void Server::handleRequestInit(const TcpConnectionPtr& conn, const json& jsonDat
       {
         MutexLockGuard lock1(connMutex_);
         LOG_ERROR << "Device "<<deviceId<<" has been online";
+        contextPtr->deviceId = -1;
+
         conn->forceClose();
         connections_.erase(conn);
+        return;
       }
     }
   }
-  const std::any& context = conn->getContext();
-  assert(context.has_value() && context.type() == typeid(ContextPtr));
-  const ContextPtr& contextPtr = any_cast<const ContextPtr&>(context);
+
   contextPtr->deviceId = deviceId;
 
   json command;
@@ -620,11 +625,15 @@ void Server::handleHeartBeat(const TcpConnectionPtr& conn,const json& jsonData){
   assert(context.has_value() && context.type() == typeid(ContextPtr));
   const ContextPtr& contextPtr = any_cast<const ContextPtr&>(context);
   contextPtr->lastHeartBeat = sendTime;
+
+  int deviceId = contextPtr->deviceId;
+  // LOG_DEBUG <<"Device "<<deviceId<<" heart beat"; 
 }
 
 void Server::checkHeartBeat(){
   {
     MutexLockGuard lock(connMutex_);
+    vector<TcpConnectionPtr> deleteConn;
     for(auto &conn:connections_){
       const std::any& context = conn->getContext();
       assert(context.has_value() && context.type() == typeid(ContextPtr));
@@ -640,8 +649,11 @@ void Server::checkHeartBeat(){
           offlineDeviceToFileOperationsMap_[deviceId] = FileOperations();
         }
         conn->forceClose();
-        connections_.erase(conn);
+        deleteConn.push_back(conn);
       }
+    }
+    for(auto &conn:deleteConn){
+      connections_.erase(conn);
     }
   }
 }
