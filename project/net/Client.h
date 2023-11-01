@@ -80,6 +80,8 @@ private:
 
   void handleMove(const muduo_net::TcpConnectionPtr& conn,const json& jsonData);
 
+  void handleHeartBeat(const muduo_net::TcpConnectionPtr& conn,const json& jsonData);
+
   void requestSyn(const muduo_net::TcpConnectionPtr& conn);
 
   void postLocalFile(const muduo_net::TcpConnectionPtr& conn, const project::file::File& file);
@@ -102,6 +104,8 @@ private:
 
   void clearTimeoutMovefromEvents();
 
+  void checkHeartBeat();
+
   muduo_net::TcpClient client_;
   LengthHeaderCodec codec_;
   muduo::MutexLock mutex_;
@@ -117,6 +121,7 @@ private:
   muduo_net::TimerId closeWriteFilesTransferTimer_;
   muduo_net::TimerId clearTimeoutMovefromEventTimer_;
   muduo_net::TimerId heartBeatSendTimer_;
+  muduo_net::TimerId heartBeatCheckTimer_;
   int deviceId_;
   std::list<struct MovefromEvent> movefromEvents_;
 };

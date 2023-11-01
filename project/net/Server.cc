@@ -626,14 +626,23 @@ void Server::handleHeartBeat(const TcpConnectionPtr& conn,const json& jsonData){
   const ContextPtr& contextPtr = any_cast<const ContextPtr&>(context);
   contextPtr->lastHeartBeat = sendTime;
 
-  int deviceId = contextPtr->deviceId;
+  json response;
+  response["type"] = "command";
+  response["command"] = HEARTBEAT;
+  response["content"]["sendTime"] = time(NULL);
+  string message = response.dump();
+  if(conn){
+    codec_.send(get_pointer(conn),message);
+    // LOG_DEBUG <<"Send heart beat"; 
+  }
+  // int deviceId = contextPtr->deviceId;
   // LOG_DEBUG <<"Device "<<deviceId<<" heart beat"; 
 }
 
 void Server::checkHeartBeat(){
+  vector<TcpConnectionPtr> deleteConn;
   {
     MutexLockGuard lock(connMutex_);
-    vector<TcpConnectionPtr> deleteConn;
     for(auto &conn:connections_){
       const std::any& context = conn->getContext();
       assert(context.has_value() && context.type() == typeid(ContextPtr));
@@ -641,20 +650,12 @@ void Server::checkHeartBeat(){
       time_t lastHeartBeat = contextPtr->lastHeartBeat;
       time_t currentTime = time(NULL);
       if(currentTime-lastHeartBeat > HEARTBEAT_TIMEOUT){
-        int deviceId = contextPtr->deviceId;
-        {
-          // add offline Device
-          LOG_INFO<<"Device "<< deviceId<<" offline";
-          MutexLockGuard lock2(offlineDeviceMutex_);
-          offlineDeviceToFileOperationsMap_[deviceId] = FileOperations();
-        }
-        conn->forceClose();
         deleteConn.push_back(conn);
       }
     }
-    for(auto &conn:deleteConn){
-      connections_.erase(conn);
-    }
+  }
+  for(auto &conn:deleteConn){
+    conn->forceClose();
   }
 }
 

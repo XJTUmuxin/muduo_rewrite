@@ -63,6 +63,7 @@ Client::Client(EventLoop* loop,const InetAddress& serverAddr,const fs::path& dir
 
   clearTimeoutMovefromEventTimer_ = client_.getLoop()->runEvery(5.0,std::bind(&Client::clearTimeoutMovefromEvents,this));
 
+  heartBeatCheckTimer_ = client_.getLoop()->runEvery((double)HEARTBEAT_INTERVAL,std::bind(&Client::checkHeartBeat,this));
 }
 
 void Client::fileWatchHandle(Timestamp receiveTime)
@@ -500,6 +501,9 @@ void Client::onCommandMessage(const TcpConnectionPtr& conn,const json& jsonData)
   case MOVE:
     handleMove(conn,jsonData["content"]);
     break;
+  case HEARTBEAT:
+    handleHeartBeat(conn,jsonData["content"]);
+    break;
   default:
     LOG_INFO<<"invaild command: "<<command;
     break;
@@ -628,6 +632,16 @@ void Client::handleMove(const TcpConnectionPtr& conn,const json& jsonData)
   filteredFiles_.erase(dirPath_ / targetPath);
 }
 
+void Client::handleHeartBeat(const TcpConnectionPtr& conn,const json& jsonData){
+  time_t sendTime = jsonData["sendTime"];
+  const std::any& context = conn->getContext();
+  assert(context.has_value() && context.type() == typeid(ContextPtr));
+  const ContextPtr& contextPtr = any_cast<const ContextPtr&>(context);
+  contextPtr->lastHeartBeat = sendTime;
+  // int deviceId = contextPtr->deviceId;
+  // LOG_DEBUG <<"Device "<<deviceId<<" heart beat"; 
+}
+
 void Client::requestSyn(const TcpConnectionPtr& conn){
     json jsonData;
     jsonData["type"] = "command";
@@ -675,5 +689,20 @@ void Client::sendHeartBeat(const TcpConnectionPtr& conn){
   if(conn){
     codec_.send(get_pointer(conn),message);
     // LOG_DEBUG <<"Send heart beat"; 
+  }
+}
+
+void Client::checkHeartBeat(){
+  if(connection_)
+  {
+    MutexLockGuard lock(mutex_);
+    const std::any& context = connection_->getContext();
+    assert(context.has_value() && context.type() == typeid(ContextPtr));
+    const ContextPtr& contextPtr = any_cast<const ContextPtr&>(context);
+    time_t lastHeartBeat = contextPtr->lastHeartBeat;
+    time_t currentTime = time(NULL);
+    if(currentTime-lastHeartBeat > HEARTBEAT_TIMEOUT){
+      connection_->forceClose();
+    }
   }
 }
