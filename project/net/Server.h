@@ -56,9 +56,13 @@ private:
 
   void handleMove(const muduo_net::TcpConnectionPtr& conn,const json& jsonData);
 
+  void handleHeartBeat(const muduo_net::TcpConnectionPtr& conn,const json& jsonData);
+
   void notifyDelete(const muduo_net::TcpConnectionPtr& conn,const fs::path& filePath);
 
   void notifyMove(const muduo_net::TcpConnectionPtr& conn,const fs::path& sourcePath,const fs::path tartgetPath);
+
+  void checkHeartBeat();
 
   typedef std::set<muduo_net::TcpConnectionPtr> ConnectionList;
   muduo_net::TcpServer server_;
@@ -72,6 +76,8 @@ private:
   std::map<int,FileOperations> offlineDeviceToFileOperationsMap_ GUARDED_BY(offlineDeviceMutex_);
   muduo::MutexLock configMutex_;
   json config_ GUARDED_BY(configMutex_);
+
+  muduo_net::TimerId heartBeatCheckTimer_;
 };
 
 } 

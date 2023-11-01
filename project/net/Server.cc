@@ -8,6 +8,8 @@
 
 #define CONFIG_FILE_PATH ".syn_config.json"
 #define TRANSH_PATH ".transh/"
+#define HEARTBEAT_INTERVAL 10.0
+#define HEARTBEAT_TIMEOUT 2*10.0
 
 using namespace std;
 using namespace project;
@@ -61,6 +63,8 @@ Server::Server(EventLoop* loop,const InetAddress& listenAddr,const fs::path& dir
     configFile << config_;
     configFile.close();
   }
+
+  heartBeatCheckTimer_ = server_.getLoop()->runEvery((double)HEARTBEAT_INTERVAL,std::bind(&Server::checkHeartBeat,this));
 }
 
 void Server::setThreadNum(int numThreads){
@@ -130,6 +134,9 @@ void Server::onCommandMessage(const TcpConnectionPtr& conn,const json& jsonData)
     break;
   case POST:
     handlePost(conn,jsonData["content"]);
+    break;
+  case HEARTBEAT:
+    handleHeartBeat(conn,jsonData["content"]);
     break;
   default:
     LOG_INFO<<"invaild command: "<<command;
@@ -236,7 +243,7 @@ void Server::handleRequestInit(const TcpConnectionPtr& conn, const json& jsonDat
       LOG_INFO << "Old device Id "<<deviceId<< " erase from the offline devices";
       handleInit(conn,fileOperations);
     }
-    else{
+    else if(deviceId == 0){
       // new device
       {
         MutexLockGuard lock1(configMutex_);
@@ -251,6 +258,14 @@ void Server::handleRequestInit(const TcpConnectionPtr& conn, const json& jsonDat
         std::ofstream configFile(configFilePath);
         configFile << config_;
         configFile.close();
+      }
+    }
+    else{
+      {
+        MutexLockGuard lock1(connMutex_);
+        LOG_ERROR << "Device "<<deviceId<<" has been online";
+        conn->forceClose();
+        connections_.erase(conn);
       }
     }
   }
@@ -583,6 +598,7 @@ void Server::notifyDelete(const TcpConnectionPtr& conn,const fs::path& filePath)
     codec_.send(get_pointer(conn),message);
   }
 }
+
 void Server::notifyMove(const TcpConnectionPtr& conn,const fs::path& sourcePath,const fs::path tartgetPath)
 {
   json jsonData;
@@ -595,6 +611,38 @@ void Server::notifyMove(const TcpConnectionPtr& conn,const fs::path& sourcePath,
 
   if(conn){
     codec_.send(get_pointer(conn),message);
+  }
+}
+
+void Server::handleHeartBeat(const TcpConnectionPtr& conn,const json& jsonData){
+  time_t sendTime = jsonData["sendTime"];
+  const std::any& context = conn->getContext();
+  assert(context.has_value() && context.type() == typeid(ContextPtr));
+  const ContextPtr& contextPtr = any_cast<const ContextPtr&>(context);
+  contextPtr->lastHeartBeat = sendTime;
+}
+
+void Server::checkHeartBeat(){
+  {
+    MutexLockGuard lock(connMutex_);
+    for(auto &conn:connections_){
+      const std::any& context = conn->getContext();
+      assert(context.has_value() && context.type() == typeid(ContextPtr));
+      const ContextPtr& contextPtr = any_cast<const ContextPtr&>(context);
+      time_t lastHeartBeat = contextPtr->lastHeartBeat;
+      time_t currentTime = time(NULL);
+      if(currentTime-lastHeartBeat > HEARTBEAT_TIMEOUT){
+        int deviceId = contextPtr->deviceId;
+        {
+          // add offline Device
+          LOG_INFO<<"Device "<< deviceId<<" offline";
+          MutexLockGuard lock2(offlineDeviceMutex_);
+          offlineDeviceToFileOperationsMap_[deviceId] = FileOperations();
+        }
+        conn->forceClose();
+        connections_.erase(conn);
+      }
+    }
   }
 }
 

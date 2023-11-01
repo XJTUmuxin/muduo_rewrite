@@ -8,6 +8,7 @@
 #define POST 5
 #define DELETE 6
 #define MOVE 7
+#define HEARTBEAT 8
 
 
 #endif

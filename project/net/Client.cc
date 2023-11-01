@@ -4,6 +4,8 @@
 #include <vector>
 #define EVENTS_BUF_SIZE 4096
 #define CONFIG_FILE_PATH ".syn_config.json"
+#define HEARTBEAT_INTERVAL 10.0
+#define HEARTBEAT_TIMEOUT 2*10.0
 using namespace std;
 using namespace project;
 using namespace project::file;
@@ -39,10 +41,6 @@ Client::Client(EventLoop* loop,const InetAddress& serverAddr,const fs::path& dir
 
   fileWatchChannel_->enableReading();
 
-  closeWriteFilesTransferTimer_ =  client_.getLoop()->runEvery(5.0,std::bind(&Client::transferCloseWriteFiles,this));
-
-  clearTimeoutMovefromEventTimer_ = client_.getLoop()->runEvery(5.0,std::bind(&Client::clearTimeoutMovefromEvents,this));
-
   fs::path configFilePath = dirPath / fs::path(CONFIG_FILE_PATH);
 
   if(fs::exists(configFilePath)){
@@ -60,6 +58,12 @@ Client::Client(EventLoop* loop,const InetAddress& serverAddr,const fs::path& dir
       configFile.close();
     }
   }
+
+  closeWriteFilesTransferTimer_ =  client_.getLoop()->runEvery(5.0,std::bind(&Client::transferCloseWriteFiles,this));
+
+  clearTimeoutMovefromEventTimer_ = client_.getLoop()->runEvery(5.0,std::bind(&Client::clearTimeoutMovefromEvents,this));
+
+  heartBeatSendTimer_ = client_.getLoop()->runEvery((double)HEARTBEAT_INTERVAL,std::bind(&Client::sendHeartBeat,this,connection_));
 
 }
 
@@ -658,5 +662,16 @@ void Client::postLocalFile(const TcpConnectionPtr& conn, const File& file){
       postingNum_++;
       // LOG_INFO<<"Posting num ++2";
     }
+  }
+}
+
+void Client::sendHeartBeat(const TcpConnectionPtr& conn){
+  json jsonData;
+  jsonData["type"] = "command";
+  jsonData["command"] = HEARTBEAT;
+  jsonData["content"]["sendTime"] = time(NULL); 
+  string message = jsonData.dump();
+  if(conn){
+    codec_.send(get_pointer(conn),message);
   }
 }

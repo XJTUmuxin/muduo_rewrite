@@ -125,13 +125,15 @@ typedef std::map<std::string,ReceiveContextPtr> ReceiveContextMap;
 
 struct Context{
   Context()
-  : deviceId(0)
+  : deviceId(0),
+    lastHeartBeat(time(NULL))
   {
 
   }
   TransferContextQue transferContextQue;
   ReceiveContextMap receiveContextMap;
   int deviceId;
+  time_t lastHeartBeat;
 };
 typedef std::shared_ptr<Context> ContextPtr;
 

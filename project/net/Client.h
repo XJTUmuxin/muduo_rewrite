@@ -84,6 +84,8 @@ private:
 
   void postLocalFile(const muduo_net::TcpConnectionPtr& conn, const project::file::File& file);
 
+  void sendHeartBeat(const muduo_net::TcpConnectionPtr& conn);
+
   void fileWatchHandle(muduo::Timestamp);
 
   void fileWatchHandleCreate(const struct inotify_event * event,const std::shared_ptr<project::file::InotifyFileNode>& nodePtr);
@@ -114,6 +116,7 @@ private:
   int postingNum_;
   muduo_net::TimerId closeWriteFilesTransferTimer_;
   muduo_net::TimerId clearTimeoutMovefromEventTimer_;
+  muduo_net::TimerId heartBeatSendTimer_;
   int deviceId_;
   std::list<struct MovefromEvent> movefromEvents_;
 };

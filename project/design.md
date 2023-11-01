@@ -88,6 +88,12 @@
     "path":filePath，
     "isDir": is dir
   }
+6) heartbeat: 心跳 客户端定期向服务器端发送心跳，服务器端定期检查心跳
+
+  content为：
+  {
+    "sendTime": send time
+  }
 
 
 
