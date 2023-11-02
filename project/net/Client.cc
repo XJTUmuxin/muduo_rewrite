@@ -63,7 +63,7 @@ Client::Client(EventLoop* loop,const InetAddress& serverAddr,const fs::path& dir
 
   clearTimeoutMovefromEventTimer_ = client_.getLoop()->runEvery(5.0,std::bind(&Client::clearTimeoutMovefromEvents,this));
 
-  heartBeatCheckTimer_ = client_.getLoop()->runEvery((double)HEARTBEAT_INTERVAL,std::bind(&Client::checkHeartBeat,this));
+  // heartBeatCheckTimer_ = client_.getLoop()->runEvery((double)HEARTBEAT_INTERVAL,std::bind(&Client::checkHeartBeat,this));
 }
 
 void Client::fileWatchHandle(Timestamp receiveTime)
