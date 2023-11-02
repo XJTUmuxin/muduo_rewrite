@@ -701,6 +701,7 @@ void Client::checkHeartBeat(){
     time_t lastHeartBeat = contextPtr->lastHeartBeat;
     time_t currentTime = time(NULL);
     if(currentTime-lastHeartBeat > HEARTBEAT_TIMEOUT){
+      LOG_INFO<<"Server is not alive";
       connection_->forceClose();
     }
   }
