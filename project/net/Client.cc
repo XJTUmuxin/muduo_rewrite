@@ -638,8 +638,7 @@ void Client::handleHeartBeat(const TcpConnectionPtr& conn,const json& jsonData){
   assert(context.has_value() && context.type() == typeid(ContextPtr));
   const ContextPtr& contextPtr = any_cast<const ContextPtr&>(context);
   contextPtr->lastHeartBeat = sendTime;
-  // int deviceId = contextPtr->deviceId;
-  // LOG_DEBUG <<"Device "<<deviceId<<" heart beat"; 
+  LOG_DEBUG <<"Server heart beat"; 
 }
 
 void Client::requestSyn(const TcpConnectionPtr& conn){
