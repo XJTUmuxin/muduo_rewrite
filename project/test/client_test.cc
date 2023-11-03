@@ -31,7 +31,7 @@ int main(int argc,char* argv[]){
     if(argc>3){
         Logger::setLogLevel(Logger::DEBUG);
         if(argc>4){
-            if(strcmp(argv[3],"filelog")==0){
+            if(strcmp(argv[4],"filelog")==0){
                 AsyncLogging log(::basename(argv[0]), kRollSize);
 
                 g_asyncLog = &log;
