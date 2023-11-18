@@ -637,7 +637,8 @@ void Client::handleHeartBeat(const TcpConnectionPtr& conn,const json& jsonData){
   const std::any& context = conn->getContext();
   assert(context.has_value() && context.type() == typeid(ContextPtr));
   const ContextPtr& contextPtr = any_cast<const ContextPtr&>(context);
-  contextPtr->lastHeartBeat = sendTime;
+  // contextPtr->lastHeartBeat = sendTime;   // use the send time as the heartbeat time
+  contextPtr->lastHeartBeat = time(NULL); //use the receive time as the heartbeat time
   LOG_DEBUG <<"Server heart beat"; 
 }
 
